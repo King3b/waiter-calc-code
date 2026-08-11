@@ -98,3 +98,40 @@ WaiterApp/
 ├── gradle/
 ├── build.gradle.kts
 └── README.md
+
+
+### 🔥 GitHub tip
+
+I'd also add a `.gitignore` before pushing the Android project. **Don't upload Android Studio's generated build files**.
+
+At the root of the project create:
+
+```text
+.gitignore
+\
+# Android Studio
+.idea/
+.gradle/
+
+# Build files
+build/
+*/build/
+
+# Local configuration
+local.properties
+
+# Generated files
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# APK files
+*.apk
+*.aab
+
+# Android Studio captures
+captures/
+.externalNativeBuild/
+.cxx/
