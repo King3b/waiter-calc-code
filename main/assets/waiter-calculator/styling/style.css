@@ -1,0 +1,940 @@
+:root {
+  /* Main Colours */
+  --blue: #2563eb;
+  --dark-blue: #1e40af;
+  --light-blue: #eff6ff;
+
+  /* Money Colours */
+  --green: #16a34a;
+  --dark-green: #15803d;
+  --light-green: #dcfce7;
+
+  --red: #dc2626;
+  --light-red: #fee2e2;
+
+  /* Neutral Colours */
+  --dark: #1e293b;
+  --gray: #64748b;
+  --light-gray: #f8fafc;
+  --border: #dbe3ef;
+  --background: #f1f5f9;
+  --white: #ffffff;
+
+  /* Effects */
+  --shadow: 0 4px 14px rgba(30, 64, 175, 0.08);
+  --shadow-hover: 0 8px 22px rgba(30, 64, 175, 0.12);
+}
+
+/* =====================================
+   RESET
+===================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  background: var(--background);
+  color: var(--dark);
+
+  line-height: 1.5;
+}
+
+/* =====================================
+   HEADER
+===================================== */
+
+header {
+  padding: 22px 5%;
+
+  background: linear-gradient(135deg, var(--blue), var(--dark-blue));
+
+  color: var(--white);
+
+  box-shadow: 0 4px 15px rgba(30, 64, 175, 0.2);
+}
+
+header h1 {
+  margin-bottom: 18px;
+
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* =====================================
+   NAVIGATION
+===================================== */
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+nav a {
+  display: inline-block;
+
+  padding: 9px 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+
+  color: var(--white);
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+nav a:hover {
+  background: var(--white);
+  color: var(--blue);
+
+  transform: translateY(-2px);
+}
+
+/* =====================================
+   MAIN CONTAINER
+===================================== */
+
+main {
+  width: 92%;
+  max-width: 1200px;
+
+  margin: 35px auto;
+}
+
+/* =====================================
+   SECTIONS / CARDS
+===================================== */
+
+section {
+  margin-bottom: 25px;
+  padding: 24px;
+
+  background: var(--white);
+
+  border: 1px solid var(--border);
+  border-radius: 16px;
+
+  box-shadow: var(--shadow);
+
+  transition:
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+section:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+/* Section Heading */
+
+section h2 {
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+
+  border-bottom: 2px solid var(--light-blue);
+
+  color: var(--blue);
+
+  font-size: 20px;
+  font-weight: 700;
+}
+
+section p {
+  color: var(--gray);
+  font-size: 14px;
+}
+
+/* =====================================
+   SPREADSHEET HEADER
+===================================== */
+
+.spreadsheet-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+}
+
+.spreadsheet-header h2 {
+  margin-bottom: 5px;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.spreadsheet-header p {
+  color: var(--gray);
+}
+
+/* =====================================
+   MONTH SELECTOR
+===================================== */
+/* =====================================
+   MONTH SEARCH / FILTER BAR
+===================================== */
+
+.month-selector {
+  min-width: 360px;
+}
+
+.month-selector label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--gray);
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Search Bar Container */
+
+.month-selector {
+  position: relative;
+}
+
+.month-selector select {
+  width: 100%;
+
+  padding: 12px 125px 12px 15px;
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  background: var(--white);
+  color: var(--dark);
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  appearance: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Dropdown Arrow */
+
+.month-selector::after {
+  position: absolute;
+
+  right: 115px;
+  bottom: 11px;
+
+  color: var(--gray);
+
+  font-size: 18px;
+
+  pointer-events: none;
+}
+
+/* View Report Button */
+
+#viewReport {
+  width: 110px;
+  height: 40px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+#viewReport:hover {
+  background: var(--dark-blue);
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+}
+
+/* Focus */
+
+.month-selector select:focus {
+  outline: none;
+
+  border-color: var(--blue);
+
+  box-shadow: 0 0 0 3px var(--light-blue);
+}
+
+/* Hover */
+
+.month-selector select:hover {
+  border-color: var(--blue);
+}
+
+/* =====================================
+   FORM
+===================================== */
+
+form {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr
+    1fr
+    auto;
+
+  gap: 15px;
+
+  align-items: end;
+}
+
+/* Input Groups */
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-bottom: 7px;
+
+  color: var(--gray);
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* =====================================
+   INPUTS
+===================================== */
+
+form input,
+form select {
+  width: 100%;
+
+  padding: 12px 13px;
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  background: var(--white);
+  color: var(--dark);
+
+  font-family: inherit;
+  font-size: 14px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+form input::placeholder {
+  color: #94a3b8;
+}
+
+form input:hover,
+form select:hover {
+  border-color: #b8c7da;
+}
+
+form input:focus,
+form select:focus {
+  outline: none;
+
+  border-color: var(--blue);
+
+  box-shadow: 0 0 0 3px var(--light-blue);
+}
+
+/* =====================================
+   EXPENSE INPUT
+===================================== */
+
+.expense-group {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 8px;
+}
+
+.expense-group label {
+  grid-column: 1 / -1;
+
+  margin-bottom: 0;
+}
+
+/* =====================================
+   BUTTON
+===================================== */
+
+form button {
+  min-height: 43px;
+
+  padding: 12px 22px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: var(--green);
+  color: var(--white);
+
+  font-family: inherit;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.2s ease,
+    box-shadow 0.25s ease;
+}
+
+form button:hover {
+  background: var(--dark-green);
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 5px 12px rgba(22, 163, 74, 0.2);
+}
+
+form button:active {
+  transform: translateY(0);
+}
+
+/* =====================================
+   TABLE CONTAINER
+===================================== */
+
+.table-container {
+  width: 100%;
+
+  overflow-x: auto;
+
+  border-radius: 12px;
+}
+
+/* =====================================
+   TABLE
+===================================== */
+
+table {
+  width: 100%;
+
+  min-width: 550px;
+
+  border-collapse: separate;
+  border-spacing: 0;
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  background: var(--white);
+}
+
+/* =====================================
+   TABLE HEADER
+===================================== */
+
+thead {
+  background: var(--light-blue);
+  color: var(--dark-blue);
+}
+
+th {
+  padding: 13px 12px;
+
+  border-bottom: 1px solid var(--border);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  text-align: center;
+}
+
+/* =====================================
+   TABLE BODY
+===================================== */
+
+td {
+  padding: 12px;
+
+  border-bottom: 1px solid var(--border);
+
+  color: var(--dark);
+
+  font-size: 14px;
+
+  text-align: center;
+}
+
+tbody tr {
+  transition: background 0.2s ease;
+}
+
+tbody tr:nth-child(even) {
+  background: var(--light-gray);
+}
+
+tbody tr:hover {
+  background: var(--light-blue);
+}
+
+/* Last Body Row */
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* =====================================
+   TABLE FOOTER / TOTAL
+===================================== */
+
+tfoot {
+  background: var(--light-green);
+
+  color: var(--green);
+
+  font-weight: 700;
+}
+
+tfoot td {
+  border-bottom: none;
+
+  color: var(--green);
+
+  font-weight: 700;
+}
+
+tfoot td:last-child {
+  font-size: 17px;
+}
+
+/* =====================================
+   MONEY STYLING
+===================================== */
+
+.money-positive {
+  color: var(--green);
+  font-weight: 700;
+}
+
+.money-negative {
+  color: var(--red);
+  font-weight: 700;
+}
+
+/* =====================================
+   SPENDING REPORT
+===================================== */
+
+#spending-report-body td:last-child {
+  color: var(--green);
+  font-weight: 700;
+}
+
+#total-spending {
+  color: var(--green) !important;
+}
+
+/* =====================================
+   MONTHLY REPORT
+===================================== */
+
+#total-cash,
+#total-card {
+  color: var(--green);
+  font-weight: 700;
+}
+
+#total-expenses {
+  color: var(--red);
+  font-weight: 700;
+}
+
+#total-earnings {
+  color: var(--green);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+/* =====================================
+   DAILY EARNINGS TOTAL
+===================================== */
+
+#totalEarnings {
+  color: var(--green);
+}
+
+/* =====================================
+   EMPTY TABLE
+===================================== */
+
+tbody:empty::after {
+  content: "No records available";
+
+  display: block;
+
+  padding: 20px;
+
+  color: var(--gray);
+
+  text-align: center;
+}
+/* =====================================
+   FOOTER
+===================================== */
+
+.site-footer {
+  margin-top: 50px;
+
+  background: linear-gradient(135deg, var(--dark-blue), #172554);
+
+  color: var(--white);
+
+  border-top: 4px solid var(--blue);
+}
+
+/* Footer Container */
+
+.footer-container {
+  width: 92%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+  padding: 45px 0;
+
+  display: grid;
+
+  grid-template-columns:
+    2fr
+    1fr
+    1fr
+    1fr;
+
+  gap: 40px;
+}
+
+/* Footer Sections */
+
+.footer-section h3 {
+  margin-bottom: 15px;
+
+  color: var(--white);
+
+  font-size: 17px;
+}
+
+.footer-section p {
+  max-width: 320px;
+
+  color: #cbd5e1;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Footer Lists */
+
+.footer-section ul {
+  display: flex;
+  flex-direction: column;
+
+  gap: 9px;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+.footer-section li {
+  color: #cbd5e1;
+
+  font-size: 14px;
+}
+
+/* Footer Links */
+
+.footer-section a {
+  color: #cbd5e1;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    padding-left 0.2s ease;
+}
+
+.footer-section a:hover {
+  color: var(--white);
+
+  padding-left: 5px;
+}
+
+/* Bottom Footer */
+
+.footer-bottom {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 18px 5%;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+  color: #94a3b8;
+
+  font-size: 12px;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+/* =========================
+   RESET SECTION
+========================= */
+
+.reset-section {
+  border-left: 4px solid #dc2626;
+}
+
+.reset-section h2 {
+  color: #dc2626;
+}
+
+#reset-btn {
+  padding: 12px 22px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #dc2626;
+  color: var(--white);
+
+  font-size: 14px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+#reset-btn:hover {
+  background: #b91c1c;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 5px 12px rgba(220, 38, 38, 0.2);
+}
+
+#reset-btn:active {
+  transform: translateY(0);
+}
+/* =====================================
+   FOOTER MOBILE
+===================================== */
+
+@media (max-width: 800px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-footer {
+    margin-top: 35px;
+  }
+
+  .footer-container {
+    width: 90%;
+
+    grid-template-columns: 1fr;
+
+    padding: 35px 0;
+
+    gap: 25px;
+  }
+
+  .footer-section p {
+    max-width: 100%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+
+    text-align: center;
+
+    padding: 18px 5%;
+  }
+}
+/* =====================================
+   MOBILE - TABLET
+===================================== */
+
+@media (max-width: 850px) {
+  main {
+    width: 94%;
+    margin: 25px auto;
+  }
+
+  form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  form button {
+    width: 100%;
+  }
+
+  .spreadsheet-header {
+    align-items: stretch;
+
+    flex-direction: column;
+  }
+
+  .year-selector {
+    width: 100%;
+  }
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 600px) {
+  header {
+    padding: 20px 5%;
+  }
+
+  header h1 {
+    font-size: 23px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  nav a {
+    width: 100%;
+
+    text-align: center;
+  }
+
+  main {
+    width: 94%;
+
+    margin: 20px auto;
+  }
+
+  section {
+    padding: 16px;
+
+    border-radius: 13px;
+  }
+
+  section h2 {
+    font-size: 18px;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  .expense-group {
+    grid-template-columns: 1fr;
+  }
+
+  .expense-group label {
+    grid-column: auto;
+  }
+
+  form button {
+    width: 100%;
+
+    margin-top: 3px;
+  }
+
+  th,
+  td {
+    padding: 10px 8px;
+
+    font-size: 12px;
+  }
+
+  tfoot td:last-child {
+    font-size: 15px;
+  }
+  .month-selector {
+    min-width: 100%;
+  }
+
+  .month-selector select {
+    padding-right: 120px;
+  }
+
+  .month-selector::after {
+    right: 108px;
+  }
+
+  #viewReport {
+    padding: 0 14px;
+  }
+}
+
+/* =====================================
+   SMALL PHONES
+===================================== */
+
+@media (max-width: 400px) {
+  header h1 {
+    font-size: 21px;
+  }
+
+  section {
+    padding: 13px;
+  }
+
+  th,
+  td {
+    padding: 8px 6px;
+  }
+
+  table {
+    min-width: 500px;
+  }
+}
