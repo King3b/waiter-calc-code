@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Spending Report</title>
+
+    <link rel="stylesheet" href="../styling/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Waiter Calculator</h1>
+
+      <nav aria-label="Main navigation">
+        <ul>
+          <li>
+            <a href="../pages/waiter_board.html">Home</a>
+          </li>
+
+          <li>
+            <a href="../pages/monthly_report.html">Monthly Report</a>
+          </li>
+
+          <li>
+            <a href="../pages/spending_report.html">Spending Report</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>Spending Report</h2>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Transaction</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+
+            <tbody id="spending-report-body"></tbody>
+
+            <tfoot>
+              <tr>
+                <td colspan="2">Total</td>
+                <td id="totalEarnings">R0.00</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </section>
+      <section class="reset-section">
+        <h2>Reset</h2>
+        <button id="reset-btn" type="button">Reset Report</button>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-container">
+        <!-- About -->
+        <div class="footer-section">
+          <h3>Waiter Calculator</h3>
+
+          <p>
+            A simple and reliable way to track your daily earnings, expenses and
+            monthly performance.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+
+          <ul>
+            <li>
+              <a href="../pages/waiter_board.html">Home</a>
+            </li>
+
+            <li>
+              <a href="../pages/monthly_report.html"> Monthly Report </a>
+            </li>
+
+            <li>
+              <a href="../pages/spending_report.html"> Spending Report </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-section">
+          <h3>Contact</h3>
+
+          <ul>
+            <li>
+              <a href="mailto:support@waitercalculator.com">
+                📧 support@waitercalculator.com
+              </a>
+            </li>
+
+            <li>
+              <span>📍 South Africa</span>
+            </li>
+
+            <li>
+              <span>💰 Track. Save. Grow.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Footer Actions -->
+        <div class="footer-section">
+          <h3>Useful</h3>
+
+          <ul>
+            <li>
+              <a href="#">Privacy</a>
+            </li>
+
+            <li>
+              <a href="#">Terms</a>
+            </li>
+
+            <li>
+              <a href="#">Help & Support</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Footer -->
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Waiter Calculator. All rights reserved.</p>
+
+        <p>Built with ❤️ using HTML, CSS & JavaScript</p>
+      </div>
+    </footer>
+
+    <script src="../Js_script/jquery-3.7.1.min.js"></script>
+    <script src="../Js_script/wiater_calc.js"></script>
+  </body>
+</html>
