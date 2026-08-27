@@ -508,7 +508,16 @@ $(document).ready(function () {
     // =========================
     // RESET SPENDING REPORT
     // =========================
+    const rowClass =
+      amount < 0 ? "negative-transaction" : "positive-transaction";
 
+    $("#spending-report-body").append(`
+  <tr class="${rowClass}">
+    <td>${date}</td>
+    <td>${transaction}</td>
+    <td>R${amount.toFixed(2)}</td>
+  </tr>
+`);
     $("#spending-report-body").html(`
     <tr>
       <td colspan="3">
@@ -520,6 +529,53 @@ $(document).ready(function () {
     $("#total-spending").text("R0.00");
 
     // =========================
+    // DASHBORED
+    // =========================
+    function updateDashboardStats() {
+      const rows = document.querySelectorAll("#tableBody tr");
+
+      let cash = 0;
+      let card = 0;
+      let expenses = 0;
+      let earnings = 0;
+
+      rows.forEach((row) => {
+        const cells = row.querySelectorAll("td");
+
+        if (cells.length < 5) return;
+
+        const getNumber = (text) => {
+          return parseFloat(text.replace(/[^\d.-]/g, "")) || 0;
+        };
+
+        cash += getNumber(cells[1].textContent);
+
+        card += getNumber(cells[2].textContent);
+
+        expenses += Math.abs(getNumber(cells[3].textContent));
+
+        earnings += getNumber(cells[4].textContent);
+      });
+
+      const setValue = (id, value) => {
+        const element = document.getElementById(id);
+
+        if (element) {
+          element.textContent = `R${value.toFixed(2)}`;
+        }
+      };
+
+      setValue("dashboardCash", cash);
+
+      setValue("dashboardCard", card);
+
+      setValue("dashboardExpenses", expenses);
+
+      setValue("dashboardEarnings", cash + card);
+
+      setValue("dashboardNet", earnings);
+    }
+    // =========================
     // RESET MONTH SELECTION
     // =========================
 
@@ -530,7 +586,7 @@ $(document).ready(function () {
     // =========================
     // SUCCESS MESSAGE
     // =========================
-
+    setTimeout(updateDashboardStats, 150);
     alert("Reset successful!\n\n" + "All payment data has been deleted.");
   });
 });

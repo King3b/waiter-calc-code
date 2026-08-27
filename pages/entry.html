@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+
+    <title>Waiter Calculator</title>
+
+    <link rel="stylesheet" href="../styling/style2.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="header-top">
+        <div>
+          <span class="app-label">PERSONAL FINANCE</span>
+          <h1>Waiter Calculator</h1>
+        </div>
+        <div class="header-opt">
+          <button class="menu-btn" id="menuBtn">
+            <span class="material-symbols-outlined">menu </span>
+          </button>
+          <div class="dropdown-menu" id="dropdownMenu">
+            <a href="../pages/home.html">🏠 Home</a>
+            <a href="../pages/earnings.html">💲 Add Earnings</a>
+            <a href="../pages/analytics.html">📈 Analytics</a>
+            <a href="../pages/expense.html">💸 Expense</a>
+            <a href="../pages/goals.html">🎯 Goals</a>
+            <a href="../pages/profile.html">👤 Profile</a>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <button class="icon-button" aria-label="Notifications">🔔</button>
+
+          <button class="profile-button" aria-label="Profile">👤</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Greeting -->
+
+      <section class="welcome-section">
+        <div>
+          <h2 class="welcome-label">Good morning, Blessings 👋</h2>
+
+          <p>Your financial overview</p>
+
+          <p id="dashboard-date">Today</p>
+        </div>
+      </section>
+      <!-- =========================
+           ADD DAILY EARNINGS
+      ========================== -->
+      <section class="earnings-section">
+        <div class="section-heading">
+          <div>
+            <span class="section-eyebrow"> DAILY ENTRY </span>
+
+            <h2>Add today's earnings</h2>
+
+            <p>Record your cash, card payments and expenses.</p>
+          </div>
+        </div>
+
+        <form id="earningsForm">
+          <!-- Cash -->
+
+          <div class="input-group">
+            <label for="cash_payment"> 💵 Cash Payment </label>
+
+            <input
+              type="number"
+              id="cash_payment"
+              placeholder="R 0.00"
+              min="0"
+              step="0.01"
+              required
+            />
+          </div>
+
+          <!-- Card -->
+
+          <div class="input-group">
+            <label for="credit_payments"> 💳 Card Payment </label>
+
+            <input
+              type="number"
+              id="credit_payments"
+              placeholder="R 0.00"
+              min="0"
+              step="0.01"
+              required
+            />
+          </div>
+
+          <!-- Expense -->
+
+          <div class="input-group expense-group">
+            <label for="expense-type"> 💸 Expense </label>
+
+            <select name="expense-type" id="expense-type">
+              <option value="none">No expense</option>
+
+              <option value="rent">🏠 Rent</option>
+
+              <option value="fees">🎓 Fees</option>
+
+              <option value="food">🍔 Food</option>
+
+              <option value="other">✏️ Other</option>
+            </select>
+
+            <input
+              type="text"
+              id="other-expense"
+              name="other-expense"
+              placeholder="What was the expense?"
+              style="display: none"
+            />
+
+            <input
+              type="number"
+              id="expense-amount"
+              name="expense-amount"
+              placeholder="R 0.00"
+              min="0"
+              step="0.01"
+            />
+          </div>
+
+          <!-- Save -->
+
+          <button type="submit" class="save-button">
+            <span>＋</span>
+
+            Save Day
+          </button>
+        </form>
+      </section>
+      <!-- =========================
+           PAYMENT HISTORY
+      ========================== -->
+
+      <section class="history-section">
+        <h2>Recent activities</h2>
+        <ul>
+          <li>hello</li>
+        </ul>
+      </section>
+    </main>
+    <script src="../Js_script/jquery-3.7.1.min.js"></script>
+    <script src="../Js_script/update.js"></script>
+    <script src="../Js_script/wiater_calc.js"></script>
+  </body>
+</html>

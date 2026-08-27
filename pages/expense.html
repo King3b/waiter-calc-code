@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Waiter Calculator</title>
+    <title>Spending Report</title>
 
     <link rel="stylesheet" href="../styling/style.css" />
   </head>
@@ -18,9 +18,11 @@
           <li>
             <a href="../pages/waiter_board.html">Home</a>
           </li>
+
           <li>
             <a href="../pages/monthly_report.html">Monthly Report</a>
           </li>
+
           <li>
             <a href="../pages/spending_report.html">Spending Report</a>
           </li>
@@ -29,109 +31,24 @@
     </header>
 
     <main>
-      <!-- Daily Earnings -->
       <section>
-        <h2>Daily Earnings</h2>
-
-        <form id="earningsForm">
-          <div class="input-group">
-            <label for="cash_payment">Cash Payment</label>
-
-            <input
-              type="number"
-              id="cash_payment"
-              placeholder="Enter cash amount"
-              min="0"
-              step="0.01"
-              required
-            />
-          </div>
-
-          <div class="input-group">
-            <label for="credit_payments">Card Payment</label>
-
-            <input
-              type="number"
-              id="credit_payments"
-              placeholder="Enter card amount"
-              min="0"
-              step="0.01"
-              required
-            />
-          </div>
-
-          <div class="input-group expense-group">
-            <label for="expense-type">Expenses</label>
-
-            <select name="expense-type" id="expense-type">
-              <option value="none">None</option>
-              <option value="rent">Rent</option>
-              <option value="fees">Fees</option>
-              <option value="food">Food</option>
-              <option value="other">Other</option>
-            </select>
-
-            <input
-              type="text"
-              id="other-expense"
-              name="other-expense"
-              placeholder="What was the expense?"
-              style="display: none"
-            />
-
-            <input
-              type="number"
-              id="expense-amount"
-              name="expense-amount"
-              placeholder="Enter expense amount"
-              min="0"
-              step="0.01"
-            />
-          </div>
-
-          <button type="submit">Save Day</button>
-        </form>
-      </section>
-
-      <!-- Payment History -->
-      <section>
-        <h2>Payment History</h2>
+        <h2>Spending Report</h2>
 
         <div class="table-container">
           <table>
             <thead>
               <tr>
                 <th>Date</th>
-                <th>Cash</th>
-                <th>Card</th>
-                <th>Expenses</th>
-                <th>Total</th>
+                <th>Transaction</th>
+                <th>Amount</th>
               </tr>
             </thead>
 
-            <tbody id="tableBody"></tbody>
-          </table>
-        </div>
-      </section>
-
-      <!-- Earnings Summary -->
-      <section>
-        <h2>Earnings Summary</h2>
-
-        <div class="table-container">
-          <table>
-            <thead>
-              <tr>
-                <th>Month</th>
-                <th>Total Earnings</th>
-              </tr>
-            </thead>
-
-            <tbody id="summaryTableBody"></tbody>
+            <tbody id="spending-report-body"></tbody>
 
             <tfoot>
               <tr>
-                <td>Total</td>
+                <td colspan="2">Total</td>
                 <td id="totalEarnings">R0.00</td>
               </tr>
             </tfoot>
@@ -219,6 +136,7 @@
         <p>Built with ❤️ using HTML, CSS & JavaScript</p>
       </div>
     </footer>
+
     <script src="../Js_script/jquery-3.7.1.min.js"></script>
     <script src="../Js_script/wiater_calc.js"></script>
   </body>
