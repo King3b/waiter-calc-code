@@ -17,7 +17,6 @@
     <header class="app-header">
       <div class="header-top">
         <div>
-          <span class="app-label">PERSONAL FINANCE</span>
           <h1>Waiter Calculator</h1>
         </div>
         <div class="header-opt">
@@ -47,9 +46,12 @@
 
       <section class="welcome-section">
         <div>
-          <h2 class="welcome-label">Good morning, Blessings 👋</h2>
+          <h2 class="welcome-label">Daily entry 🗓️</h2>
 
-          <p>Your financial overview</p>
+          <p>
+            This is where you enter all the amount you have made aswell as the
+            expnses for the day
+          </p>
 
           <p id="dashboard-date">Today</p>
         </div>
@@ -58,15 +60,10 @@
            ADD DAILY EARNINGS
       ========================== -->
       <section class="earnings-section">
-        <div class="section-heading">
-          <div>
-            <span class="section-eyebrow"> DAILY ENTRY </span>
+        <h2>DAILY ENTRY</h2>
 
-            <h2>Add today's earnings</h2>
-
-            <p>Record your cash, card payments and expenses.</p>
-          </div>
-        </div>
+        <p>Record your cash, card payments and expenses.</p>
+        <br />
 
         <form id="earningsForm">
           <!-- Cash -->
@@ -113,6 +110,10 @@
 
               <option value="food">🍔 Food</option>
 
+              <option value="transport">🚗 transport</option>
+
+              <option value="essentials">❗ essentials</option>
+
               <option value="other">✏️ Other</option>
             </select>
 
@@ -151,9 +152,23 @@
         <h2>Recent activities</h2>
         <ul>
           <li>hello</li>
+          <li>how is the weather</li>
+          <li>Go hard</li>
         </ul>
       </section>
     </main>
+    <footer class="site-footer">
+      <nav>
+        <ul>
+          <li><a href="../pages/home.html">🏠</a></li>
+          <li><a href="../pages/analytics.html">📊</a></li>
+          <li><a href="../pages/entry.html">➕</a></li>
+          <li><a href="../pages/analytics.html">🎯 </a></li>
+          <li><a href="../pages/profile.html">👤</a></li>
+        </ul>
+      </nav>
+      <div class="footer-container"></div>
+    </footer>
     <script src="../Js_script/jquery-3.7.1.min.js"></script>
     <script src="../Js_script/update.js"></script>
     <script src="../Js_script/wiater_calc.js"></script>

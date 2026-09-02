@@ -3,43 +3,515 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
     <title>Monthly Report</title>
 
-    <link rel="stylesheet" href="../styling/style.css" />
+    <link rel="stylesheet" href="../styling/style2.css" />
   </head>
 
   <body>
-    <header>
-      <h1>Waiter Calculator</h1>
+    <header class="app-header">
+      <div class="header-top">
+        <div>
+          <h1>Waiter Calculator</h1>
+        </div>
+        <div class="header-opt">
+          <button class="menu-btn" id="menuBtn">
+            <span class="material-symbols-outlined">menu </span>
+          </button>
+          <div class="dropdown-menu" id="dropdownMenu">
+            <a href="../pages/home.html">🏠 Home</a>
+            <a href="../pages/entry.html">💲 Add Earnings</a>
+            <a href="../pages/analytics.html">📈 Analytics</a>
+            <a href="../pages/expense.html">💸 Expense</a>
+            <a href="../pages/goals.html">🎯 Goals</a>
+            <a href="../pages/profile.html">👤 Profile</a>
+          </div>
+        </div>
 
-      <nav aria-label="Main navigation">
-        <ul>
-          <li>
-            <a href="../pages/waiter_board.html">Home</a>
-          </li>
+        <div class="header-actions">
+          <button class="icon-button" aria-label="Notifications">🔔</button>
 
-          <li>
-            <a href="../pages/monthly_report.html">Monthly Report</a>
-          </li>
-
-          <li>
-            <a href="../pages/spending_report.html">Spending Report</a>
-          </li>
-        </ul>
-      </nav>
+          <button class="profile-button" aria-label="Profile">👤</button>
+        </div>
+      </div>
     </header>
 
     <main>
       <!-- Month Selection -->
-      <section class="spreadsheet">
-        <div class="spreadsheet-header">
-          <div>
-            <h2>Monthly Spending Summary</h2>
-            <p>Select the month you would like to view</p>
-          </div>
+
+      <section class="welcome-section">
+        <div>
+          <h2 class="welcome-label">Monthly Report 📊</h2>
+
+          <p>
+            Hi Blessings 👋 welcome to your Monthly Report 📊 check ur stats
+          </p>
+
+          <p id="dashboard-date">Today</p>
         </div>
       </section>
+      <section>
+        <h2>Net earnings</h2>
+        <h3 id="net-earnings">earnings</h3>
+        <p id="ai-suggestion">ai-suggestion</p>
+      </section>
+      <section>
+        <h2>short summary</h2>
+        <div class="stats-grid">
+          <!-- Earnings -->
+
+          <div class="stat-card cash">
+            <div class="stat-icon">💵</div>
+
+            <div>
+              <span>Cash</span>
+
+              <strong id="month-cash-earnings"> R0.00 </strong>
+              <small class="ai-suggestions"> up from last month by 14% </small>
+            </div>
+          </div>
+
+          <!-- Expenses -->
+
+          <div class="stat-card credit-card">
+            <div class="stat-icon">💳</div>
+
+            <div>
+              <span>Card payments</span>
+
+              <strong id="month-creditCard-earnings"> R0.00 </strong>
+
+              <small class="ai-suggestions"> down by 10% </small>
+            </div>
+          </div>
+
+          <!-- Cash -->
+
+          <div class="stat-card expense">
+            <div class="stat-icon blue-icon">💸</div>
+
+            <div>
+              <span>Expense</span>
+
+              <strong id="month-expenses"> R0.00 </strong>
+
+              <small class="ai-suggestions"> expense has risen by 10% </small>
+            </div>
+          </div>
+          <div class="stat-card earnings">
+            <div class="stat-icon blue-icon">📈</div>
+
+            <div>
+              <span>earnings</span>
+
+              <strong id="month-earninsg"> R0.00 </strong>
+
+              <small class="ai-suggestions"> earning has risen by 10% </small>
+            </div>
+          </div>
+
+        </div>
+        </div>
+      </section>
+
+<!-- =====================================
+     FINANCIAL PERFORMANCE CHART
+===================================== -->
+
+      <section class="financial-chart-section">
+   <h2>FINANCIAL OVERVIEW</h2>
+
+  <div class="chart-header">
+    <div>
+      <h2>Money Flow 📊</h2>
+      <p>Compare your earnings, expenses and net income.</p>
+    </div>
+
+    <div class="chart-period">
+      <span>2026</span>
+      <span class="material-symbols-outlined">calendar_month</span>
+    </div>
+  </div>
+
+  <!-- Chart Legend -->
+
+  <div class="chart-legend">
+
+    <div class="legend-item">
+      <span class="legend-dot earnings-dot"></span>
+      Earnings
+    </div>
+
+    <div class="legend-item">
+      <span class="legend-dot expenses-dot"></span>
+      Expenses
+    </div>
+
+    <div class="legend-item">
+      <span class="legend-dot net-dot"></span>
+      Net
+    </div>
+
+  </div>
+
+  <!-- Chart -->
+
+  <div class="financial-chart">
+
+    <!-- Y Axis -->
+
+    <div class="chart-y-axis">
+      <span>R15k</span>
+      <span>R12k</span>
+      <span>R9k</span>
+      <span>R6k</span>
+      <span>R3k</span>
+      <span>R0</span>
+    </div>
+
+    <!-- Chart Area -->
+
+    <div class="chart-area">
+
+      <div class="chart-grid-line"></div>
+      <div class="chart-grid-line"></div>
+      <div class="chart-grid-line"></div>
+      <div class="chart-grid-line"></div>
+      <div class="chart-grid-line"></div>
+      <div class="chart-grid-line"></div>
+
+      <!-- January -->
+
+      <div class="chart-month">
+
+        <div class="bars">
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R8.2k</span>
+            <div class="bar earnings-bar" style="height: 55%;"></div>
+          </div>
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R2.1k</span>
+            <div class="bar expenses-bar" style="height: 14%;"></div>
+          </div>
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R6.1k</span>
+            <div class="bar net-bar" style="height: 41%;"></div>
+          </div>
+
+        </div>
+
+        <span class="month-label">Jan</span>
+
+      </div>
+
+      <!-- February -->
+
+      <div class="chart-month">
+
+        <div class="bars">
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R9.4k</span>
+            <div class="bar earnings-bar" style="height: 63%;"></div>
+          </div>
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R2.8k</span>
+            <div class="bar expenses-bar" style="height: 19%;"></div>
+          </div>
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R6.6k</span>
+            <div class="bar net-bar" style="height: 44%;"></div>
+          </div>
+
+        </div>
+
+        <span class="month-label">Feb</span>
+
+      </div>
+
+      <!-- March -->
+
+      <div class="chart-month">
+
+        <div class="bars">
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R10.8k</span>
+            <div class="bar earnings-bar" style="height: 72%;"></div>
+          </div>
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R3.2k</span>
+            <div class="bar expenses-bar" style="height: 21%;"></div>
+          </div>
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R7.6k</span>
+            <div class="bar net-bar" style="height: 51%;"></div>
+          </div>
+
+        </div>
+
+        <span class="month-label">Mar</span>
+
+      </div>
+
+      <!-- April -->
+
+      <div class="chart-month">
+
+        <div class="bars">
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R9.8k</span>
+            <div class="bar earnings-bar" style="height: 65%;"></div>
+          </div>
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R2.5k</span>
+            <div class="bar expenses-bar" style="height: 17%;"></div>
+          </div>
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R7.3k</span>
+            <div class="bar net-bar" style="height: 49%;"></div>
+          </div>
+
+        </div>
+
+        <span class="month-label">Apr</span>
+
+      </div>
+
+      <!-- May -->
+
+      <div class="chart-month">
+
+        <div class="bars">
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R11.7k</span>
+            <div class="bar earnings-bar" style="height: 78%;"></div>
+          </div>
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R3.6k</span>
+            <div class="bar expenses-bar" style="height: 24%;"></div>
+          </div>
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R8.1k</span>
+            <div class="bar net-bar" style="height: 54%;"></div>
+          </div>
+
+        </div>
+
+        <span class="month-label">May</span>
+
+      </div>
+
+      <!-- June -->
+
+      <div class="chart-month">
+
+        <div class="bars">
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R13.2k</span>
+            <div class="bar earnings-bar" style="height: 88%;"></div>
+          </div>
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R4.1k</span>
+            <div class="bar expenses-bar" style="height: 27%;"></div>
+          </div>
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R9.1k</span>
+            <div class="bar net-bar" style="height: 61%;"></div>
+          </div>
+
+        </div>
+
+        <span class="month-label">Jun</span>
+
+      </div>
+
+      <!-- July -->
+
+      <div class="chart-month">
+
+        <div class="bars">
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R12.1k</span>
+            <div class="bar earnings-bar" style="height: 81%;"></div>
+          </div>
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R3.3k</span>
+            <div class="bar expenses-bar" style="height: 22%;"></div>
+          </div>
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R8.8k</span>
+            <div class="bar net-bar" style="height: 59%;"></div>
+          </div>
+
+        </div>
+
+        <span class="month-label">Jul</span>
+
+      </div>
+
+      <!-- August -->
+
+      <div class="chart-month active-month">
+
+        <div class="bars">
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R12.45k</span>
+            <div class="bar earnings-bar" style="height: 83%;"></div>
+          </div>
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R4.0k</span>
+            <div class="bar expenses-bar" style="height: 27%;"></div>
+          </div>
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R8.45k</span>
+            <div class="bar net-bar" style="height: 56%;"></div>
+          </div>
+
+        </div>
+
+        <span class="month-label">Aug</span>
+
+      </div>
+
+            <!-- septemnber -->
+
+      <div class="chart-month active-month">
+
+        <div class="bars">
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R12.45k</span>
+            <div class="bar earnings-bar" style="height: 83%;"></div>
+          </div>
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R4.0k</span>
+            <div class="bar expenses-bar" style="height: 27%;"></div>
+          </div>
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R8.45k</span>
+            <div class="bar net-bar" style="height: 56%;"></div>
+          </div>
+
+        </div>
+
+        <span class="month-label">Sep</span>
+
+      </div>
+            <!-- october -->
+
+      <div class="chart-month">
+
+        <div class="bars">
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R12.1k</span>
+            <div class="bar earnings-bar" style="height: 81%;"></div>
+          </div>
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R3.3k</span>
+            <div class="bar expenses-bar" style="height: 22%;"></div>
+          </div>
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R8.8k</span>
+            <div class="bar net-bar" style="height: 59%;"></div>
+          </div>
+
+        </div>
+
+        <span class="month-label">Oct</span>
+
+      </div>
+            <!-- november -->
+
+      <div class="chart-month">
+
+        <div class="bars">
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R12.1k</span>
+            <div class="bar earnings-bar" style="height: 81%;"></div>
+          </div>
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R3.3k</span>
+            <div class="bar expenses-bar" style="height: 22%;"></div>
+          </div>
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R8.8k</span>
+            <div class="bar net-bar" style="height: 59%;"></div>
+          </div>
+
+        </div>
+
+        <span class="month-label">Nov</span>
+
+      </div>
+            <!-- december -->
+
+      <div class="chart-month">
+
+        <div class="bars">
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R12.1k</span>
+            <div class="bar earnings-bar" style="height: 81%;"></div>
+          </div>
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R3.3k</span>
+            <div class="bar expenses-bar" style="height: 22%;"></div>
+          </div>
+
+          <div class="bar-wrapper">
+            <span class="bar-value">R8.8k</span>
+            <div class="bar net-bar" style="height: 59%;"></div>
+          </div>
+
+        </div>
+
+        <span class="month-label">Dec</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+      </section>
+
+
       <section>
         <div class="month-selector">
           <h2>Select Month</h2>
@@ -62,7 +534,6 @@
           <button id="viewReport">View Report</button>
         </div>
       </section>
-
       <!-- Monthly Transactions -->
       <section>
         <h2 id="month-title">Month of Transactions</h2>
@@ -93,8 +564,118 @@
           </table>
         </div>
       </section>
+    <!-- Monthly Transactions ring -->
+<!-- Monthly Transactions Ring -->
+
+<section class="monthly-ring-section">
+
+  <div class="ring-header">
+
+    <div>
+      <span class="section-eyebrow">MONTHLY PERFORMANCE</span>
+
+      <h2>Financial Overview 📊</h2>
+
+      <p>Previous months performance</p>
+    </div>
+
+    <div class="ring-month">
+      AUG
+    </div>
+
+  </div>
+
+
+  <!-- Previous Months -->
+
+  <div class="ring-months">
+
+    <span>J</span>
+    <span>F</span>
+    <span>M</span>
+    <span>A</span>
+    <span>M</span>
+    <span>J</span>
+    <span>J</span>
+
+    <span class="current-month">A</span>
+
+    <span>S</span>
+    <span>O</span>
+    <span>N</span>
+    <span>D</span>
+
+  </div>
+
+
+  <!-- Rings -->
+
+  <div class="financial-ring">
+
+    <!-- Earnings -->
+
+    <div class="ring ring-earnings">
+
+      <!-- Expenses -->
+
+      <div class="ring ring-expenses">
+
+        <!-- Net -->
+
+        <div class="ring ring-net">
+
+          <div class="ring-center">
+
+            <span>AVAILABLE NET</span>
+
+            <strong>R 8,450</strong>
+
+            <small>August</small>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- Ring Legend -->
+
+  <div class="ring-legend">
+
+    <div>
+      <span class="legend-dot earnings-dot"></span>
+      Earnings
+    </div>
+
+    <div>
+      <span class="legend-dot expenses-dot"></span>
+      Expenses
+    </div>
+
+    <div>
+      <span class="legend-dot net-dot"></span>
+      Net
+    </div>
+
+  </div>
+
+</section>
     </main>
     <footer class="site-footer">
+      <nav>
+        <ul>
+          <li><a href="../pages/home.html">🏠</a></li>
+          <li><a href="../pages/analytics.html">📊</a></li>
+          <li><a href="../pages/entry.html">➕</a></li>
+          <li><a href="../pages/analytics.html">🎯 </a></li>
+          <li><a href="../pages/profile.html">👤</a></li>
+        </ul>
+      </nav>
       <div class="footer-container">
         <!-- About -->
         <div class="footer-section">
@@ -175,6 +756,7 @@
       </div>
     </footer>
     <script src="../Js_script/jquery-3.7.1.min.js"></script>
+    <script src="../Js_script/update.js"></script>
     <script src="../Js_script/wiater_calc.js"></script>
   </body>
 </html>
