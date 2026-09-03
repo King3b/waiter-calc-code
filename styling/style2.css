@@ -1,10 +1,10 @@
 /* =========================================================
-   WAITER CALCULATOR — PREMIUM IOS STYLE
+  WAITER CALCULATOR — PREMIUM IOS STYLE
    ========================================================= */
 
 :root {
   /* =========================
-     BRAND COLOURS
+    BRAND COLOURS
   ========================== */
 
   --blue: #2563eb;
@@ -18,6 +18,15 @@
   --red: #dc2626;
   --light-red: #fee2e2;
 
+  /* ========================= 
+      GLASS SYSTEM
+   ========================== */
+  --glass: rgba(255, 255, 255, 0.68);
+  --glass-strong: rgba(255, 255, 255, 0.82);
+  --glass-soft: rgba(255, 255, 255, 0.48);
+  --glass-border: rgba(255, 255, 255, 0.72);
+  --blue-border: rgba(37, 99, 235, 0.14);
+  --border: rgba(148, 163, 184, 0.18);
   /* =========================
      IOS NEUTRALS
   ========================== */
@@ -976,194 +985,6 @@ nav ul li a:hover {
 }
 
 /* =========================================================
-   FINANCIAL PERFORMANCE CHART
-========================================================= */
-
-.financial-chart-section {
-  overflow: hidden;
-}
-
-/* Chart Header */
-
-.chart-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  margin-bottom: 20px;
-  text-align: left;
-}
-
-.chart-header h2 {
-  margin: 3px 0 4px;
-  padding: 0;
-  border: none;
-
-  color: var(--dark);
-  font-size: 22px;
-}
-
-.chart-header p {
-  margin: 0;
-  color: var(--gray);
-  font-size: 13px;
-}
-
-.chart-eyebrow {
-  display: block;
-
-  color: var(--blue);
-
-  font-size: 10px;
-  font-weight: 800;
-
-  letter-spacing: 1.5px;
-}
-
-.chart-period {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-
-  padding: 9px 13px;
-
-  border: 1px solid var(--border);
-  border-radius: 12px;
-
-  background: var(--light-blue);
-
-  color: var(--dark-blue);
-
-  font-size: 12px;
-  font-weight: 700;
-}
-
-/* =========================================================
-   LEGEND
-========================================================= */
-
-.chart-legend {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-
-  margin-bottom: 20px;
-}
-
-.legend-item {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-
-  color: var(--gray);
-
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.legend-dot {
-  width: 9px;
-  height: 9px;
-
-  border-radius: 50%;
-}
-
-.earnings-dot {
-  background: var(--green);
-}
-
-.expenses-dot {
-  background: var(--red);
-}
-
-.net-dot {
-  background: var(--blue);
-}
-
-/* =========================================================
-   CHART
-========================================================= */
-
-.financial-chart {
-  display: flex;
-
-  width: 100%;
-  height: 350px;
-}
-
-/* Y Axis */
-
-.chart-y-axis {
-  width: 55px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  padding: 3px 8px 30px 0;
-
-  color: #94a3b8;
-
-  font-size: 10px;
-
-  text-align: right;
-}
-
-/* Chart Area */
-
-.chart-area {
-  position: relative;
-
-  flex: 1;
-
-  display: flex;
-  align-items: stretch;
-  justify-content: space-around;
-
-  min-width: 0;
-
-  border-bottom: 1px solid var(--border);
-}
-
-/* Grid */
-
-.chart-grid-line {
-  position: absolute;
-  left: 0;
-
-  width: 100%;
-  height: 1px;
-
-  border-top: 1px dashed rgba(148, 163, 184, 0.18);
-
-  pointer-events: none;
-}
-
-.chart-grid-line:nth-child(1) {
-  top: 0;
-}
-
-.chart-grid-line:nth-child(2) {
-  top: 20%;
-}
-
-.chart-grid-line:nth-child(3) {
-  top: 40%;
-}
-
-.chart-grid-line:nth-child(4) {
-  top: 60%;
-}
-
-.chart-grid-line:nth-child(5) {
-  top: 80%;
-}
-
-.chart-grid-line:nth-child(6) {
-  bottom: 0;
-}
-
-/* =========================================================
    MONTHLY FINANCIAL RING
    ========================================================= */
 
@@ -1921,6 +1742,1083 @@ tbody tr:last-child td {
 
 #viewReport:active {
   transform: scale(0.97);
+}
+
+/* =========================================================
+   PREMIUM PROFILE PAGE
+   ========================================================= */
+
+/* =========================================================
+   PROFILE HEADER
+   ========================================================= */
+
+.profile-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  padding: 18px 5%;
+
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.97),
+    rgba(30, 64, 175, 0.97)
+  );
+
+  color: var(--white);
+
+  box-shadow: 0 8px 30px rgba(30, 64, 175, 0.15);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.profile-header-inner {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.brand-eyebrow {
+  display: block;
+
+  margin-bottom: 2px;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.brand h1 {
+  margin: 0;
+
+  font-size: 22px;
+
+  letter-spacing: -0.5px;
+}
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.back-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 10px 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  backdrop-filter: blur(10px);
+
+  transition: var(--transition);
+}
+
+.back-button:hover {
+  background: white;
+
+  color: var(--blue);
+
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   PROFILE PAGE
+   ========================================================= */
+
+.profile-page {
+  width: 92%;
+
+  max-width: 1050px;
+
+  margin: 35px auto 70px;
+}
+
+/* =========================================================
+   PROFILE HERO
+   ========================================================= */
+
+.profile-hero {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding: 30px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(239, 246, 255, 0.96),
+    rgba(255, 255, 255, 0.96)
+  );
+
+  border: 1px solid rgba(37, 99, 235, 0.1);
+
+  border-radius: 26px;
+
+  box-shadow: 0 12px 35px rgba(30, 64, 175, 0.08);
+}
+
+/* =========================================================
+   PROFILE IDENTITY
+   ========================================================= */
+
+.profile-identity {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+}
+
+/* =========================================================
+   AVATAR
+   ========================================================= */
+
+.profile-avatar {
+  position: relative;
+
+  width: 92px;
+  height: 92px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, var(--blue), var(--dark-blue));
+
+  color: white;
+
+  font-size: 25px;
+
+  font-weight: 800;
+
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
+}
+
+.online-dot {
+  position: absolute;
+
+  right: 3px;
+  bottom: 5px;
+
+  width: 18px;
+  height: 18px;
+
+  border: 3px solid white;
+
+  border-radius: 50%;
+
+  background: var(--green);
+}
+
+/* =========================================================
+   USER INFO
+   ========================================================= */
+
+.profile-eyebrow {
+  color: var(--blue);
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.profile-user h2 {
+  margin: 2px 0;
+
+  color: var(--dark);
+
+  font-size: 26px;
+
+  letter-spacing: -0.7px;
+}
+
+.username {
+  margin: 0 0 8px;
+
+  color: var(--gray);
+
+  font-size: 13px;
+}
+
+.profile-status {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  color: var(--green);
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--green);
+}
+
+/* =========================================================
+   EDIT BUTTON
+   ========================================================= */
+
+.edit-profile {
+  padding: 11px 17px;
+
+  border: 1px solid rgba(37, 99, 235, 0.15);
+
+  border-radius: 13px;
+
+  background: white;
+
+  color: var(--blue);
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 15px rgba(30, 64, 175, 0.06);
+
+  transition: var(--transition);
+}
+
+.edit-profile:hover {
+  background: var(--blue);
+
+  color: white;
+
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   PROFILE SECTION
+   ========================================================= */
+
+.profile-section {
+  margin-top: 22px;
+
+  padding: 26px;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  border: 1px solid rgba(148, 163, 184, 0.14);
+
+  border-radius: 23px;
+
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.055);
+
+  backdrop-filter: blur(18px);
+}
+
+.section-heading {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 20px;
+}
+
+.section-eyebrow {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--blue);
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.section-heading h2 {
+  margin: 0;
+
+  padding: 0;
+
+  border: none;
+
+  color: var(--dark);
+
+  font-size: 20px;
+
+  letter-spacing: -0.4px;
+}
+
+.section-heading p {
+  margin-top: 4px;
+
+  color: var(--gray);
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   FINANCIAL STATS
+   ========================================================= */
+
+.profile-stats {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 13px;
+}
+
+.profile-stat {
+  padding: 18px;
+
+  border: 1px solid rgba(148, 163, 184, 0.12);
+
+  border-radius: 18px;
+
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+
+  transition: var(--transition);
+}
+
+.profile-stat:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 10px 25px rgba(30, 64, 175, 0.07);
+}
+
+.stat-top {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 14px;
+}
+
+.profile-stat-icon {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: var(--light-green);
+
+  font-size: 15px;
+}
+
+.expenses-stat .profile-stat-icon {
+  background: var(--light-red);
+}
+
+.net-stat .profile-stat-icon {
+  background: var(--light-blue);
+}
+
+.stat-label {
+  color: var(--gray);
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.7px;
+}
+
+.profile-stat strong {
+  display: block;
+
+  color: var(--green);
+
+  font-size: 21px;
+
+  letter-spacing: -0.5px;
+}
+
+.expenses-stat strong {
+  color: var(--red);
+}
+
+.net-stat strong {
+  color: var(--blue);
+}
+
+.profile-stat small {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #94a3b8;
+
+  font-size: 10px;
+}
+
+/* =========================================================
+   PERFORMANCE
+   ========================================================= */
+
+.period-pill {
+  padding: 7px 11px;
+
+  border-radius: 999px;
+
+  background: var(--light-blue);
+
+  color: var(--blue);
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+.performance-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 11px;
+}
+
+.performance-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 15px;
+
+  border: 1px solid rgba(148, 163, 184, 0.12);
+
+  border-radius: 16px;
+
+  background: #fbfdff;
+}
+
+.performance-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 13px;
+
+  background: var(--light-blue);
+
+  font-size: 18px;
+}
+
+.performance-card div {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.performance-card span {
+  color: var(--gray);
+
+  font-size: 11px;
+}
+
+.performance-card strong {
+  margin-top: 2px;
+
+  color: var(--dark);
+
+  font-size: 17px;
+}
+
+.performance-card small {
+  color: #94a3b8;
+
+  font-size: 9px;
+}
+
+/* =========================================================
+   SAVINGS GOAL
+   ========================================================= */
+
+.savings-card {
+  background: linear-gradient(135deg, #eff6ff, #ffffff);
+}
+
+.savings-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+.savings-header h2 {
+  margin: 2px 0;
+
+  font-size: 21px;
+}
+
+.goal-icon {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  background: white;
+
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.08);
+
+  font-size: 22px;
+}
+
+.goal-amounts {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 6px;
+
+  margin-top: 22px;
+}
+
+.goal-amounts strong {
+  color: var(--blue);
+
+  font-size: 28px;
+
+  letter-spacing: -0.8px;
+}
+
+.goal-amounts span {
+  color: var(--gray);
+
+  font-size: 12px;
+}
+
+.progress-track {
+  height: 9px;
+
+  margin-top: 12px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: rgba(37, 99, 235, 0.1);
+}
+
+.progress-bar {
+  width: 65%;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: linear-gradient(90deg, var(--blue), #60a5fa);
+}
+
+.goal-footer {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-top: 9px;
+
+  color: var(--gray);
+
+  font-size: 10px;
+}
+
+/* =========================================================
+   QUICK PROFILE LINKS
+   ========================================================= */
+
+.quick-profile-links {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.profile-link {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 13px;
+
+  border: 1px solid rgba(148, 163, 184, 0.12);
+
+  border-radius: 15px;
+
+  color: inherit;
+
+  text-decoration: none;
+
+  transition: var(--transition);
+}
+
+.profile-link:hover {
+  background: var(--light-blue);
+
+  transform: translateX(3px);
+}
+
+.profile-link-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 12px;
+
+  background: var(--light-blue);
+}
+
+.red-link {
+  background: var(--light-red);
+}
+
+.green-link {
+  background: var(--light-green);
+}
+
+.profile-link div {
+  display: flex;
+
+  flex-direction: column;
+
+  flex: 1;
+}
+
+.profile-link strong {
+  font-size: 13px;
+}
+
+.profile-link small {
+  color: var(--gray);
+
+  font-size: 10px;
+}
+
+.arrow {
+  color: #94a3b8;
+
+  font-size: 18px;
+}
+
+/* =========================================================
+   ACTIVITY
+   ========================================================= */
+
+.activity-list {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.activity-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 13px 2px;
+
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.activity-item:last-child {
+  border-bottom: none;
+}
+
+.activity-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background: var(--light-green);
+}
+
+.activity-icon.expense {
+  background: var(--light-red);
+}
+
+.activity-info {
+  display: flex;
+
+  flex-direction: column;
+
+  flex: 1;
+}
+
+.activity-info strong {
+  font-size: 13px;
+}
+
+.activity-info small {
+  color: var(--gray);
+
+  font-size: 10px;
+}
+
+.activity-positive {
+  color: var(--green);
+
+  font-size: 13px;
+
+  font-weight: 750;
+}
+
+.activity-negative {
+  color: var(--red);
+
+  font-size: 13px;
+
+  font-weight: 750;
+}
+
+/* =========================================================
+   SETTINGS
+   ========================================================= */
+
+.settings-list {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.setting-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  min-height: 62px;
+
+  border-bottom: 1px solid rgba(148, 163, 184, 0.11);
+}
+
+.setting-row:last-child {
+  border-bottom: none;
+}
+
+.setting-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: var(--light-blue);
+}
+
+.setting-info {
+  display: flex;
+
+  flex-direction: column;
+
+  flex: 1;
+}
+
+.setting-info strong {
+  font-size: 13px;
+}
+
+.setting-info small {
+  color: var(--gray);
+
+  font-size: 10px;
+}
+
+.settings-arrow {
+  color: #94a3b8;
+
+  font-size: 18px;
+}
+
+.settings-value {
+  color: var(--gray);
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+/* =========================================================
+   IOS TOGGLE
+   ========================================================= */
+
+.ios-toggle {
+  position: relative;
+
+  width: 46px;
+  height: 27px;
+
+  flex-shrink: 0;
+}
+
+.ios-toggle input {
+  display: none;
+}
+
+.ios-toggle span {
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: 999px;
+
+  background: #cbd5e1;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+}
+
+.ios-toggle span::after {
+  content: "";
+
+  position: absolute;
+
+  top: 3px;
+  left: 3px;
+
+  width: 21px;
+  height: 21px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
+
+  transition: var(--transition);
+}
+
+.ios-toggle input:checked + span {
+  background: var(--green);
+}
+
+.ios-toggle input:checked + span::after {
+  transform: translateX(19px);
+}
+
+/* =========================================================
+   ACCOUNT INFORMATION
+   ========================================================= */
+
+.account-info {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 15px;
+
+  margin-top: 25px;
+
+  color: #94a3b8;
+
+  font-size: 9px;
+
+  text-align: center;
+}
+
+/* =========================================================
+   PROFILE MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+  .profile-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-header {
+    position: relative;
+
+    padding: 16px 4%;
+  }
+
+  .profile-header-inner {
+    align-items: flex-start;
+  }
+
+  .brand h1 {
+    font-size: 19px;
+  }
+
+  .back-button {
+    padding: 8px 12px;
+
+    font-size: 10px;
+  }
+
+  .profile-page {
+    width: 94%;
+
+    margin-top: 20px;
+  }
+
+  .profile-hero {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    padding: 20px;
+  }
+
+  .profile-identity {
+    gap: 14px;
+  }
+
+  .profile-avatar {
+    width: 72px;
+    height: 72px;
+
+    font-size: 20px;
+  }
+
+  .profile-user h2 {
+    font-size: 21px;
+  }
+
+  .edit-profile {
+    width: 100%;
+  }
+
+  .profile-section {
+    padding: 19px;
+
+    border-radius: 20px;
+  }
+
+  .profile-stats {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8px;
+  }
+
+  .profile-stat {
+    padding: 14px;
+  }
+
+  .profile-stat strong {
+    font-size: 17px;
+  }
+
+  .performance-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+  }
+
+  .period-pill {
+    white-space: nowrap;
+  }
+
+  .account-info {
+    flex-wrap: wrap;
+
+    line-height: 1.8;
+  }
+}
+
+@media (max-width: 400px) {
+  .profile-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-identity {
+    align-items: flex-start;
+  }
+
+  .profile-avatar {
+    width: 64px;
+    height: 64px;
+  }
 }
 
 /* =========================================================

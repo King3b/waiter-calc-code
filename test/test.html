@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expenses - Waiter Calculator</title>
+    <link rel="stylesheet" href="../styling/style.css" />
+    <link rel="stylesheet" href="test.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Main Container -->
+    <div class="app-container">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-left">
+          <button class="back-btn">←</button>
+          <h1 class="header-title">Expenses</h1>
+        </div>
+        <button class="add-btn">+ Add</button>
+      </header>
+
+      <!-- Today's Summary Card -->
+      <section class="summary-card">
+        <div class="card-header">
+          <h2 class="card-title">Today's Summary</h2>
+          <span class="date-badge">20 Aug</span>
+        </div>
+
+        <div class="summary-grid">
+          <div class="summary-item">
+            <span class="summary-label">Income</span>
+            <span class="summary-value income">+R1,050</span>
+          </div>
+          <div class="summary-item">
+            <span class="summary-label">Expenses</span>
+            <span class="summary-value expense">-R120</span>
+          </div>
+        </div>
+
+        <div class="summary-divider"></div>
+
+        <div class="summary-net">
+          <span class="net-label">Net Total</span>
+          <span class="net-value">R930</span>
+        </div>
+      </section>
+
+      <!-- Quick Stats -->
+      <section class="stats-row">
+        <div class="stat-card">
+          <div class="stat-icon">📊</div>
+          <div class="stat-info">
+            <span class="stat-value">R82</span>
+            <span class="stat-label">Daily Avg</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📈</div>
+          <div class="stat-info">
+            <span class="stat-value">R145</span>
+            <span class="stat-label">Highest</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📉</div>
+          <div class="stat-info">
+            <span class="stat-value">R25</span>
+            <span class="stat-label">Lowest</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Transactions List -->
+      <section class="transactions-section">
+        <div class="section-header">
+          <h2 class="section-title">Transactions</h2>
+          <button class="filter-btn">Filter ⌄</button>
+        </div>
+
+        <div class="transactions-list">
+          <!-- Transaction Item -->
+          <div class="transaction-item">
+            <div class="transaction-icon food">🍽️</div>
+            <div class="transaction-details">
+              <span class="transaction-name">Meal</span>
+              <span class="transaction-time">Today, 14:30</span>
+            </div>
+            <span class="transaction-amount expense">-R75</span>
+            <button class="edit-btn">⋯</button>
+          </div>
+
+          <!-- Transaction Item -->
+          <div class="transaction-item">
+            <div class="transaction-icon transport">🚗</div>
+            <div class="transaction-details">
+              <span class="transaction-name">Transport</span>
+              <span class="transaction-time">Today, 13:15</span>
+            </div>
+            <span class="transaction-amount expense">-R45</span>
+            <button class="edit-btn">⋯</button>
+          </div>
+
+          <!-- Transaction Item -->
+          <div class="transaction-item">
+            <div class="transaction-icon cash">💵</div>
+            <div class="transaction-details">
+              <span class="transaction-name">Cash Tip</span>
+              <span class="transaction-time">Today, 12:45</span>
+            </div>
+            <span class="transaction-amount income">+R450</span>
+            <button class="edit-btn">⋯</button>
+          </div>
+
+          <!-- Transaction Item -->
+          <div class="transaction-item">
+            <div class="transaction-icon card">💳</div>
+            <div class="transaction-details">
+              <span class="transaction-name">Card Payment</span>
+              <span class="transaction-time">Today, 11:20</span>
+            </div>
+            <span class="transaction-amount income">+R600</span>
+            <button class="edit-btn">⋯</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Category Breakdown -->
+      <section class="categories-section">
+        <div class="section-header">
+          <h2 class="section-title">Categories</h2>
+          <button class="view-all-btn">View All →</button>
+        </div>
+
+        <div class="category-list">
+          <div class="category-item">
+            <div class="category-icon food">🍽️</div>
+            <div class="category-info">
+              <span class="category-name">Food</span>
+              <div class="progress-bar">
+                <div class="progress-fill food-fill" style="width: 35%"></div>
+              </div>
+            </div>
+            <span class="category-amount">R850</span>
+            <span class="category-percent">35%</span>
+          </div>
+
+          <div class="category-item">
+            <div class="category-icon transport">🚗</div>
+            <div class="category-info">
+              <span class="category-name">Transport</span>
+              <div class="progress-bar">
+                <div
+                  class="progress-fill transport-fill"
+                  style="width: 20%"
+                ></div>
+              </div>
+            </div>
+            <span class="category-amount">R480</span>
+            <span class="category-percent">20%</span>
+          </div>
+
+          <div class="category-item">
+            <div class="category-icon supplies">🛒</div>
+            <div class="category-info">
+              <span class="category-name">Supplies</span>
+              <div class="progress-bar">
+                <div
+                  class="progress-fill supplies-fill"
+                  style="width: 13%"
+                ></div>
+              </div>
+            </div>
+            <span class="category-amount">R320</span>
+            <span class="category-percent">13%</span>
+          </div>
+
+          <div class="category-item">
+            <div class="category-icon phone">📱</div>
+            <div class="category-info">
+              <span class="category-name">Phone</span>
+              <div class="progress-bar">
+                <div class="progress-fill phone-fill" style="width: 10%"></div>
+              </div>
+            </div>
+            <span class="category-amount">R250</span>
+            <span class="category-percent">10%</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Insight Card -->
+      <section class="insight-card">
+        <div class="insight-header">
+          <span class="insight-icon">💡</span>
+          <h3 class="insight-title">Smart Insight</h3>
+        </div>
+        <p class="insight-text">
+          You spend <strong>31% more</strong> on weekends than weekdays.
+          Consider meal prepping to save on food costs.
+        </p>
+        <button class="insight-btn">View Full Analysis →</button>
+      </section>
+
+      <!-- Bottom Navigation -->
+      <nav class="bottom-nav">
+        <button class="nav-item active">
+          <span class="nav-icon">💰</span>
+          <span class="nav-label">Expenses</span>
+        </button>
+        <button class="nav-item">
+          <span class="nav-icon">📊</span>
+          <span class="nav-label">Stats</span>
+        </button>
+        <button class="nav-item">
+          <span class="nav-icon">📅</span>
+          <span class="nav-label">History</span>
+        </button>
+        <button class="nav-item">
+          <span class="nav-icon">⚙️</span>
+          <span class="nav-label">Settings</span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Add Expense Modal (Hidden by default) -->
+    <div class="modal-overlay" id="addExpenseModal">
+      <div class="modal">
+        <div class="modal-header">
+          <h2 class="modal-title">Add Expense</h2>
+          <button class="close-btn" onclick="closeModal()">✕</button>
+        </div>
+
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label">Amount</label>
+            <input type="number" class="form-input" placeholder="R 0.00" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Category</label>
+            <div class="category-grid">
+              <button class="category-btn">🍽️ Food</button>
+              <button class="category-btn">🚗 Transport</button>
+              <button class="category-btn">🛒 Supplies</button>
+              <button class="category-btn">📱 Phone</button>
+              <button class="category-btn">💊 Health</button>
+              <button class="category-btn">⚡ Other</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Payment Method</label>
+            <div class="payment-methods">
+              <button class="payment-btn">💵 Cash</button>
+              <button class="payment-btn">💳 Card</button>
+              <button class="payment-btn">📱 Mobile</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Notes (Optional)</label>
+            <input type="text" class="form-input" placeholder="Add a note..." />
+          </div>
+
+          <div class="form-actions">
+            <button class="cancel-btn" onclick="closeModal()">Cancel</button>
+            <button class="save-btn" onclick="saveExpense()">
+              Save Expense
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function closeModal() {
+        document.getElementById("addExpenseModal").style.display = "none";
+      }
+
+      function saveExpense() {
+        alert("Expense saved!");
+        closeModal();
+      }
+
+      // Open modal when Add button is clicked
+      document.querySelector(".add-btn").addEventListener("click", function () {
+        document.getElementById("addExpenseModal").style.display = "flex";
+      });
+    </script>
+  </body>
+</html>

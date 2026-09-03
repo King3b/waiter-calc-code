@@ -10,7 +10,7 @@
 
     <title>Waiter Calculator</title>
 
-    <link rel="stylesheet" href="../styling/style2.css" />
+    <link rel="stylesheet" href="../styling/style.css" />
   </head>
 
   <body>
@@ -66,31 +66,33 @@
            NET EARNINGS HERO
       ========================== -->
 
-      <section class="net-card">
-        <h2>AVAILABLE NET</h2>
+      
+      <section class="profile-section savings-card">
+        <div class="savings-header">
+          <div>
+            <h2 class="section-eyebrow"> Net Earnings </h2>
 
-        <div class="net-amount" id="dashboardNet">R0.00</div>
 
-        <!-- Goal Progress -->
-        <div class="goal-progress">
-          <div class="goal-info">
-            <span>MONTHLY GOAL</span>
-            <strong>R10,000</strong>
+            <p>Keep building towards your goal.</p>
           </div>
 
-          <div class="progress-track">
-            <div class="progress-fill" id="goalProgress"></div>
-          </div>
-
-          <div class="progress-values">
-            <span id="goalCurrent">R0</span>
-            <span>R10,000</span>
-          </div>
+          <span class="goal-icon"> 📈 </span>
         </div>
 
-        <div class="net-footer">
-          <span class="change">↑ Tracking your earnings</span>
-          <span>This month</span>
+        <div class="goal-amounts">
+          <strong> R6,500 </strong>
+
+          <span> of R10,000 </span>
+        </div>
+
+        <div class="progress-track">
+          <div class="progress-bar"></div>
+        </div>
+
+        <div class="goal-footer">
+          <span> 65% complete </span>
+
+          <span> R3,500 remaining </span>
         </div>
       </section>
 
@@ -183,7 +185,7 @@
             </span>
           </a>
 
-          <a class="quick-action" href="../pages/monthly_report.html">
+          <a class="quick-action" href="../pages/analytics.html">
             <span class="quick-action-icon"> 📊 </span>
 
             <span>
@@ -192,7 +194,7 @@
             </span>
           </a>
 
-          <a class="quick-action" href="../pages/spending_report.html">
+          <a class="quick-action" href="../pages/expense.html">
             <span class="quick-action-icon expense-action-icon"> 💸 </span>
 
             <span>
@@ -204,87 +206,19 @@
       </section>
     </main>
     <footer class="site-footer">
-      <nav>
-        <ul>
-          <li><a href="../pages/home.html">🏠</a></li>
-          <li><a href="../pages/analytics.html">📊</a></li>
-          <li><a href="../pages/entry.html">➕</a></li>
-          <li><a href="../pages/analytics.html">🎯 </a></li>
-          <li><a href="../pages/profile.html">👤</a></li>
-        </ul>
-      </nav>
+      <section class="footer-nav">
+        <nav>
+          <ul>
+            <li><a href="../pages/home.html">🏠</a></li>
+            <li><a href="../pages/analytics.html">📊</a></li>
+            <li><a href="../pages/entry.html">➕</a></li>
+            <li><a href="../pages/goals.html">🎯 </a></li>
+            <li><a href="../pages/profile.html">👤</a></li>
+          </ul>
+        </nav>
+      </section>
       <div class="footer-container">
-        <div class="footer-section">
-          <h3>Waiter Calculator</h3>
 
-          <p>
-            A simple and reliable way to track your daily earnings, expenses and
-            monthly performance.
-          </p>
-        </div>
-
-        <div class="footer-section">
-          <h3>Quick Links</h3>
-
-          <ul>
-            <li>
-              <a href="../pages/waiter_board.html"> Home </a>
-            </li>
-
-            <li>
-              <a href="../pages/monthly_report.html"> Monthly Report </a>
-            </li>
-
-            <li>
-              <a href="../pages/spending_report.html"> Spending Report </a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="footer-section">
-          <h3>Contact</h3>
-
-          <ul>
-            <li>
-              <a href="mailto:support@waitercalculator.com">
-                📧 support@waitercalculator.com
-              </a>
-            </li>
-
-            <li>
-              <span> 📍 South Africa </span>
-            </li>
-
-            <li>
-              <span> 💰 Track. Save. Grow. </span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="footer-section">
-          <h3>Useful</h3>
-
-          <ul>
-            <li>
-              <a href="#"> Privacy </a>
-            </li>
-
-            <li>
-              <a href="#"> Terms </a>
-            </li>
-
-            <li>
-              <a href="#"> Help & Support </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2026 Waiter Calculator. All rights reserved.</p>
-
-        <p>Built with ❤️ using HTML, CSS & JavaScript</p>
-      </div>
     </footer>
 
     <script src="../Js_script/jquery-3.7.1.min.js"></script>

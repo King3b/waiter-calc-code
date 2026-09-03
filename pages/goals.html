@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Goals & Targets | Waiter Calculator</title>
+        <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+
+    <!-- Main website CSS -->
+    <link rel="stylesheet" href="../styling/style.css" />
+
+    <!-- Targets page CSS -->
+    <link rel="stylesheet" href="../styling/targets.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="header-top">
+        <div>
+          <h1>Waiter Calculator</h1>
+        </div>
+        <div class="header-opt">
+          <button class="menu-btn" id="menuBtn">
+            <span class="material-symbols-outlined">menu </span>
+          </button>
+          <div class="dropdown-menu" id="dropdownMenu">
+            <a href="../pages/home.html">🏠 Home</a>
+            <a href="../pages/entry.html">💲 Add Earnings</a>
+            <a href="../pages/analytics.html">📈 Analytics</a>
+            <a href="../pages/expense.html">💸 Expense</a>
+            <a href="../pages/goals.html">🎯 Goals</a>
+            <a href="../pages/profile.html">👤 Profile</a>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <button class="icon-button" aria-label="Notifications">🔔</button>
+
+          <button class="profile-button" aria-label="Profile">👤</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="targets-page">
+      <!-- =========================
+         HERO
+         ========================= -->
+
+      <section class="targets-hero">
+        <div class="hero-content">
+          <span class="hero-eyebrow"> FINANCIAL GOALS </span>
+
+          <h2>Turn your money into milestones. 🎯</h2>
+
+          <p>
+            Set targets, track your progress and stay focused on what you're
+            working towards.
+          </p>
+        </div>
+
+        <div class="hero-icon">🎯</div>
+      </section>
+
+      <!-- =========================
+         QUICK STATS
+         ========================= -->
+
+      <section class="goal-stats">
+        <div class="goal-stat">
+          <span class="goal-stat-label"> Active Goals </span>
+
+          <span class="goal-stat-value blue"> 3 </span>
+        </div>
+
+        <div class="goal-stat">
+          <span class="goal-stat-label"> Completed </span>
+
+          <span class="goal-stat-value green"> 1 </span>
+        </div>
+
+        <div class="goal-stat">
+          <span class="goal-stat-label"> Saved </span>
+
+          <span class="goal-stat-value green"> R8,450 </span>
+        </div>
+
+        <div class="goal-stat">
+          <span class="goal-stat-label"> Remaining </span>
+
+          <span class="goal-stat-value red"> R11,550 </span>
+        </div>
+      </section>
+
+      <!-- =========================
+         YOUR GOALS
+         ========================= -->
+
+      <section class="goals-section">
+        <div class="goals-section-header">
+          <div>
+            <h2>Your Goals</h2>
+
+            <p>Keep your eye on the bigger picture.</p>
+          </div>
+
+          <button class="add-goal-btn" type="button">＋ Add Goal</button>
+        </div>
+
+        <div class="goals-grid">
+          <!-- GOAL 1 -->
+
+          <article class="goal-card">
+            <div class="goal-top">
+              <div class="goal-title-wrapper">
+                <div class="goal-icon">💻</div>
+
+                <div>
+                  <h3 class="goal-name">New Laptop</h3>
+
+                  <span class="goal-type"> Personal Purchase </span>
+                </div>
+              </div>
+
+              <span class="goal-status status-progress"> In Progress </span>
+            </div>
+
+            <div class="goal-amounts">
+              <span class="current-amount"> R6,500 </span>
+
+              <span class="target-amount"> of R12,000 </span>
+            </div>
+
+            <div class="progress-track">
+              <div class="progress-fill" style="width: 54%"></div>
+            </div>
+
+            <div class="goal-footer">
+              <span class="goal-percent"> 54% complete </span>
+
+              <span class="goal-remaining"> R5,500 remaining </span>
+            </div>
+
+            <div class="goal-deadline">
+              <span class="deadline-info"> 📅 Target: 15 December 2026 </span>
+
+              <span class="days-left"> 103 days </span>
+            </div>
+          </article>
+
+          <!-- GOAL 2 -->
+
+          <article class="goal-card">
+            <div class="goal-top">
+              <div class="goal-title-wrapper">
+                <div class="goal-icon">🚗</div>
+
+                <div>
+                  <h3 class="goal-name">Car Fund</h3>
+
+                  <span class="goal-type"> Long-Term Savings </span>
+                </div>
+              </div>
+
+              <span class="goal-status status-warning"> Behind </span>
+            </div>
+
+            <div class="goal-amounts">
+              <span class="current-amount"> R1,950 </span>
+
+              <span class="target-amount"> of R10,000 </span>
+            </div>
+
+            <div class="progress-track">
+              <div class="progress-fill orange" style="width: 19.5%"></div>
+            </div>
+
+            <div class="goal-footer">
+              <span class="goal-percent"> 19.5% complete </span>
+
+              <span class="goal-remaining"> R8,050 remaining </span>
+            </div>
+
+            <div class="goal-deadline">
+              <span class="deadline-info"> 📅 Target: 30 June 2027 </span>
+
+              <span class="days-left"> 300 days </span>
+            </div>
+          </article>
+
+          <!-- GOAL 3 -->
+
+          <article class="goal-card">
+            <div class="goal-top">
+              <div class="goal-title-wrapper">
+                <div class="goal-icon">🏖️</div>
+
+                <div>
+                  <h3 class="goal-name">Holiday</h3>
+
+                  <span class="goal-type"> Lifestyle </span>
+                </div>
+              </div>
+
+              <span class="goal-status status-progress"> On Track </span>
+            </div>
+
+            <div class="goal-amounts">
+              <span class="current-amount"> R4,000 </span>
+
+              <span class="target-amount"> of R6,000 </span>
+            </div>
+
+            <div class="progress-track">
+              <div class="progress-fill green" style="width: 67%"></div>
+            </div>
+
+            <div class="goal-footer">
+              <span class="goal-percent"> 67% complete </span>
+
+              <span class="goal-remaining"> R2,000 remaining </span>
+            </div>
+
+            <div class="goal-deadline">
+              <span class="deadline-info"> 📅 Target: 20 November 2026 </span>
+
+              <span class="days-left"> 78 days </span>
+            </div>
+          </article>
+
+          <!-- GOAL 4 -->
+
+          <article class="goal-card">
+            <div class="goal-top">
+              <div class="goal-title-wrapper">
+                <div class="goal-icon">🛡️</div>
+
+                <div>
+                  <h3 class="goal-name">Emergency Fund</h3>
+
+                  <span class="goal-type"> Financial Safety </span>
+                </div>
+              </div>
+
+              <span class="goal-status status-success"> Completed </span>
+            </div>
+
+            <div class="goal-amounts">
+              <span class="current-amount"> R5,000 </span>
+
+              <span class="target-amount"> of R5,000 </span>
+            </div>
+
+            <div class="progress-track">
+              <div class="progress-fill green" style="width: 100%"></div>
+            </div>
+
+            <div class="goal-footer">
+              <span class="goal-percent"> 100% complete 🎉 </span>
+
+              <span class="goal-remaining"> Goal reached </span>
+            </div>
+
+            <div class="goal-deadline">
+              <span class="deadline-info"> ✓ Completed </span>
+
+              <span class="days-left"> Done </span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- =========================
+         CREATE GOAL
+         ========================= -->
+
+      <section class="create-goal">
+        <div class="goals-section-header">
+          <div>
+            <h2>Create a New Goal</h2>
+
+            <p>Give your next milestone a name.</p>
+          </div>
+        </div>
+
+        <form class="goal-form">
+          <div class="goal-form-group">
+            <label for="goalName"> Goal Name </label>
+
+            <input type="text" id="goalName" placeholder="e.g. New phone" />
+          </div>
+
+          <div class="goal-form-group">
+            <label for="goalType"> Goal Type </label>
+
+            <select id="goalType">
+              <option value="">Select type</option>
+
+              <option>Savings</option>
+
+              <option>Purchase</option>
+
+              <option>Holiday</option>
+
+              <option>Emergency Fund</option>
+
+              <option>Debt</option>
+
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="goal-form-group">
+            <label for="goalAmount"> Target Amount </label>
+
+            <input type="number" id="goalAmount" placeholder="R0.00" />
+          </div>
+
+          <div class="goal-form-group">
+            <label for="goalStart"> Starting Amount </label>
+
+            <input type="number" id="goalStart" placeholder="R0.00" />
+          </div>
+
+          <div class="goal-form-group">
+            <label for="goalDeadline"> Target Date </label>
+
+            <input type="date" id="goalDeadline" />
+          </div>
+
+          <div class="goal-form-group">
+            <label for="goalFrequency"> Contribution Frequency </label>
+
+            <select id="goalFrequency">
+              <option>Weekly</option>
+
+              <option>Bi-weekly</option>
+
+              <option>Monthly</option>
+
+              <option>Custom</option>
+            </select>
+          </div>
+
+          <div class="goal-form-group full">
+            <label for="goalNotes"> Notes </label>
+
+            <textarea
+              id="goalNotes"
+              placeholder="Why is this goal important to you?"
+            ></textarea>
+          </div>
+
+          <div class="goal-form-group full">
+            <button class="save-goal-btn" type="button">🎯 Create Goal</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- =========================
+         FINANCIAL TIP
+         ========================= -->
+
+      <section class="goal-tip">
+        <div class="tip-icon">💡</div>
+
+        <div>
+          <h3>Small progress adds up</h3>
+
+          <p>
+            Set realistic targets and contribute consistently. Your goals can be
+            adjusted whenever your income or priorities change.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- =========================
+     FOOTER
+     ========================= -->
+
+    <footer class="site-footer">
+      <section class="footer-nav">
+        <nav>
+          <ul>
+            <li><a href="../pages/home.html">🏠</a></li>
+            <li><a href="../pages/analytics.html">📊</a></li>
+            <li><a href="../pages/entry.html">➕</a></li>
+            <li><a href="../pages/goals.html">🎯 </a></li>
+            <li><a href="../pages/profile.html">👤</a></li>
+          </ul>
+        </nav>
+      </section>
+      <div class="footer-container">
+
+    </footer>
+
+    <script src="../Js_script/jquery-3.7.1.min.js"></script>
+    <script src="../Js_script/update.js"></script>
+    <script src="../Js_script/wiater_calc.js"></script>
+  </body>
+</html>

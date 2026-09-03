@@ -7,9 +7,13 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
       rel="stylesheet"
     />
+    <link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+  rel="stylesheet"
+>
     <title>Monthly Report</title>
 
-    <link rel="stylesheet" href="../styling/style2.css" />
+    <link rel="stylesheet" href="../styling/style.css" />
   </head>
 
   <body>
@@ -118,399 +122,124 @@
         </div>
       </section>
 
-<!-- =====================================
-     FINANCIAL PERFORMANCE CHART
-===================================== -->
+      <!-- =========================================================
+     MONEY FLOW CHART SECTION
+     ========================================================= -->
 
-      <section class="financial-chart-section">
-   <h2>FINANCIAL OVERVIEW</h2>
+<section class="section money-flow-section">
 
   <div class="chart-header">
     <div>
-      <h2>Money Flow 📊</h2>
-      <p>Compare your earnings, expenses and net income.</p>
+      <span class="chart-eyebrow">MONEY FLOW</span>
+      <h2>Balance Over Time</h2>
+      <p>Your balance, tracked like a ticker — up when you earn, down when you spend.</p>
     </div>
 
-    <div class="chart-period">
-      <span>2026</span>
-      <span class="material-symbols-outlined">calendar_month</span>
+    <div class="range-toggle">
+      <input type="radio" name="money-range" id="range-week" checked>
+      <label for="range-week">Week</label>
+
+      <input type="radio" name="money-range" id="range-month">
+      <label for="range-month">Month</label>
     </div>
   </div>
 
-  <!-- Chart Legend -->
-
-  <div class="chart-legend">
-
-    <div class="legend-item">
-      <span class="legend-dot earnings-dot"></span>
-      Earnings
+  <!-- ===================== WEEK VIEW (by day) ===================== -->
+  <div class="money-chart-panel panel-week">
+    <div class="money-flow-summary">
+      <span class="money-flow-amount">$410.00</span>
+      <span class="money-flow-trend is-up">▲ 12.4% <span class="period">this week</span></span>
     </div>
 
-    <div class="legend-item">
-      <span class="legend-dot expenses-dot"></span>
-      Expenses
-    </div>
+    <svg class="money-chart" viewBox="0 0 680 220" preserveAspectRatio="none" role="img" aria-label="Balance by day this week, trending up">
+      <defs>
+        <linearGradient id="flowFillWeek" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="var(--green)" stop-opacity="0.35" />
+          <stop offset="100%" stop-color="var(--green)" stop-opacity="0" />
+        </linearGradient>
+      </defs>
 
-    <div class="legend-item">
-      <span class="legend-dot net-dot"></span>
-      Net
-    </div>
+      <!-- grid -->
+      <line class="grid-line" x1="0" y1="20" x2="680" y2="20" />
+      <line class="grid-line" x1="0" y1="75" x2="680" y2="75" />
+      <line class="grid-line" x1="0" y1="130" x2="680" y2="130" />
+      <line class="grid-line" x1="0" y1="185" x2="680" y2="185" />
 
+      <!-- area under the line -->
+      <path class="flow-area" fill="url(#flowFillWeek)"
+        d="M20.0,200.0 C73.3,200.0 73.3,147.3 126.7,147.3 C180.0,147.3 180.0,164.9 233.3,164.9 C286.7,164.9 286.7,94.6 340.0,94.6 C393.3,94.6 393.3,116.6 446.7,116.6 C500.0,116.6 500.0,50.7 553.3,50.7 C606.7,50.7 606.7,20.0 660.0,20.0 L660.0,210.0 L20.0,210.0 Z" />
+
+      <!-- the line itself -->
+      <path class="flow-line" stroke="var(--green)"
+        d="M20.0,200.0 C73.3,200.0 73.3,147.3 126.7,147.3 C180.0,147.3 180.0,164.9 233.3,164.9 C286.7,164.9 286.7,94.6 340.0,94.6 C393.3,94.6 393.3,116.6 446.7,116.6 C500.0,116.6 500.0,50.7 553.3,50.7 C606.7,50.7 606.7,20.0 660.0,20.0" />
+
+      <!-- pulsing "live" end point -->
+      <circle class="flow-end-pulse" cx="660" cy="20" r="5" />
+      <circle class="flow-end" cx="660" cy="20" r="5" />
+    </svg>
+
+    <div class="chart-x-labels">
+      <span>Mon</span>
+      <span>Tue</span>
+      <span>Wed</span>
+      <span>Thu</span>
+      <span>Fri</span>
+      <span>Sat</span>
+      <span>Sun</span>
+    </div>
   </div>
 
-  <!-- Chart -->
-
-  <div class="financial-chart">
-
-    <!-- Y Axis -->
-
-    <div class="chart-y-axis">
-      <span>R15k</span>
-      <span>R12k</span>
-      <span>R9k</span>
-      <span>R6k</span>
-      <span>R3k</span>
-      <span>R0</span>
+  <!-- ===================== MONTH VIEW (by month) ===================== -->
+  <div class="money-chart-panel panel-month">
+    <div class="money-flow-summary">
+      <span class="money-flow-amount">$460.00</span>
+      <span class="money-flow-trend is-up">▲ 38.2% <span class="period">this year</span></span>
     </div>
 
-    <!-- Chart Area -->
-
-    <div class="chart-area">
-
-      <div class="chart-grid-line"></div>
-      <div class="chart-grid-line"></div>
-      <div class="chart-grid-line"></div>
-      <div class="chart-grid-line"></div>
-      <div class="chart-grid-line"></div>
-      <div class="chart-grid-line"></div>
-
-      <!-- January -->
-
-      <div class="chart-month">
-
-        <div class="bars">
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R8.2k</span>
-            <div class="bar earnings-bar" style="height: 55%;"></div>
-          </div>
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R2.1k</span>
-            <div class="bar expenses-bar" style="height: 14%;"></div>
-          </div>
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R6.1k</span>
-            <div class="bar net-bar" style="height: 41%;"></div>
-          </div>
-
-        </div>
-
-        <span class="month-label">Jan</span>
-
-      </div>
-
-      <!-- February -->
-
-      <div class="chart-month">
-
-        <div class="bars">
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R9.4k</span>
-            <div class="bar earnings-bar" style="height: 63%;"></div>
-          </div>
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R2.8k</span>
-            <div class="bar expenses-bar" style="height: 19%;"></div>
-          </div>
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R6.6k</span>
-            <div class="bar net-bar" style="height: 44%;"></div>
-          </div>
-
-        </div>
-
-        <span class="month-label">Feb</span>
-
-      </div>
-
-      <!-- March -->
-
-      <div class="chart-month">
-
-        <div class="bars">
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R10.8k</span>
-            <div class="bar earnings-bar" style="height: 72%;"></div>
-          </div>
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R3.2k</span>
-            <div class="bar expenses-bar" style="height: 27%;"> </div>
-          </div>
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R7.6k</span>
-            <div class="bar net-bar" style="height: 51%;"></div>
-          </div>
-
-        </div>
-
-        <span class="month-label">Mar</span>
-
-      </div>
-
-      <!-- April -->
-
-      <div class="chart-month">
-
-        <div class="bars">
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R9.8k</span>
-            <div class="bar earnings-bar" style="height: 65%;"></div>
-          </div>
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R2.5k</span>
-            <div class="bar expenses-bar" style="height: 17%;"></div>
-          </div>
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R7.3k</span>
-            <div class="bar net-bar" style="height: 49%;"></div>
-          </div>
-
-        </div>
-
-        <span class="month-label">Apr</span>
-
-      </div>
-
-      <!-- May -->
-
-      <div class="chart-month">
-
-        <div class="bars">
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R11.7k</span>
-            <div class="bar earnings-bar" style="height: 78%;"></div>
-          </div>
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R3.6k</span>
-            <div class="bar expenses-bar" style="height: 24%;"></div>
-          </div>
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R8.1k</span>
-            <div class="bar net-bar" style="height: 54%;"></div>
-          </div>
-
-        </div>
-
-        <span class="month-label">May</span>
-
-      </div>
-
-      <!-- June -->
-
-      <div class="chart-month">
-
-        <div class="bars">
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R13.2k</span>
-            <div class="bar earnings-bar" style="height: 88%;"></div>
-          </div>
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R4.1k</span>
-            <div class="bar expenses-bar" style="height: 27%;"></div>
-          </div>
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R9.1k</span>
-            <div class="bar net-bar" style="height: 61%;"></div>
-          </div>
-
-        </div>
-
-        <span class="month-label">Jun</span>
-
-      </div>
-
-      <!-- July -->
-
-      <div class="chart-month">
-
-        <div class="bars">
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R12.1k</span>
-            <div class="bar earnings-bar" style="height: 81%;"></div>
-          </div>
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R3.3k</span>
-            <div class="bar expenses-bar" style="height: 22%;"></div>
-          </div>
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R8.8k</span>
-            <div class="bar net-bar" style="height: 59%;"></div>
-          </div>
-
-        </div>
-
-        <span class="month-label">Jul</span>
-
-      </div>
-
-      <!-- August -->
-
-      <div class="chart-month active-month">
-
-        <div class="bars">
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R12.45k</span>
-            <div class="bar earnings-bar" style="height: 83%;"></div>
-          </div>
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R4.0k</span>
-            <div class="bar expenses-bar" style="height: 27%;"></div>
-          </div>
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R8.45k</span>
-            <div class="bar net-bar" style="height: 56%;"></div>
-          </div>
-
-        </div>
-
-        <span class="month-label">Aug</span>
-
-      </div>
-
-            <!-- septemnber -->
-
-      <div class="chart-month active-month">
-
-        <div class="bars">
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R12.45k</span>
-            <div class="bar earnings-bar" style="height: 83%;"></div>
-          </div>
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R4.0k</span>
-            <div class="bar expenses-bar" style="height: 27%;"></div>
-          </div>
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R8.45k</span>
-            <div class="bar net-bar" style="height: 56%;"></div>
-          </div>
-
-        </div>
-
-        <span class="month-label">Sep</span>
-
-      </div>
-            <!-- october -->
-
-      <div class="chart-month">
-
-        <div class="bars">
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R12.1k</span>
-            <div class="bar earnings-bar" style="height: 81%;"></div>
-          </div>
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R3.3k</span>
-            <div class="bar expenses-bar" style="height: 22%;"></div>
-          </div>
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R8.8k</span>
-            <div class="bar net-bar" style="height: 59%;"></div>
-          </div>
-
-        </div>
-
-        <span class="month-label">Oct</span>
-
-      </div>
-            <!-- november -->
-
-      <div class="chart-month">
-
-        <div class="bars">
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R12.1k</span>
-            <div class="bar earnings-bar" style="height: 81%;"></div>
-          </div>
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R3.3k</span>
-            <div class="bar expenses-bar" style="height: 22%;"></div>
-          </div>
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R8.8k</span>
-            <div class="bar net-bar" style="height: 59%;"></div>
-          </div>
-
-        </div>
-
-        <span class="month-label">Nov</span>
-
-      </div>
-            <!-- december -->
-
-      <div class="chart-month">
-
-        <div class="bars">
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R12.1k</span>
-            <div class="bar earnings-bar" style="height: 81%;"></div>
-          </div>
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R3.3k</span>
-            <div class="bar expenses-bar" style="height: 22%;"></div>
-          </div>
-
-          <div class="bar-wrapper">
-            <span class="bar-value">R8.8k</span>
-            <div class="bar net-bar" style="height: 59%;"></div>
-          </div>
-
-        </div>
-
-        <span class="month-label">Dec</span>
-
-      </div>
-
+    <svg class="money-chart" viewBox="0 0 680 220" preserveAspectRatio="none" role="img" aria-label="Balance by month this year, trending up">
+      <defs>
+        <linearGradient id="flowFillMonth" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="var(--green)" stop-opacity="0.35" />
+          <stop offset="100%" stop-color="var(--green)" stop-opacity="0" />
+        </linearGradient>
+      </defs>
+
+      <!-- grid -->
+      <line class="grid-line" x1="0" y1="20" x2="680" y2="20" />
+      <line class="grid-line" x1="0" y1="75" x2="680" y2="75" />
+      <line class="grid-line" x1="0" y1="130" x2="680" y2="130" />
+      <line class="grid-line" x1="0" y1="185" x2="680" y2="185" />
+
+      <!-- area under the line -->
+      <path class="flow-area" fill="url(#flowFillMonth)"
+        d="M20.0,200.0 C49.1,200.0 49.1,168.7 78.2,168.7 C107.3,168.7 107.3,184.3 136.4,184.3 C165.5,184.3 165.5,129.6 194.5,129.6 C223.6,129.6 223.6,145.2 252.7,145.2 C281.8,145.2 281.8,98.3 310.9,98.3 C340.0,98.3 340.0,113.9 369.1,113.9 C398.2,113.9 398.2,74.8 427.3,74.8 C456.4,74.8 456.4,90.4 485.5,90.4 C514.5,90.4 514.5,51.3 543.6,51.3 C572.7,51.3 572.7,67.0 601.8,67.0 C630.9,67.0 630.9,20.0 660.0,20.0 L660.0,210.0 L20.0,210.0 Z" />
+
+      <!-- the line itself -->
+      <path class="flow-line" stroke="var(--green)"
+        d="M20.0,200.0 C49.1,200.0 49.1,168.7 78.2,168.7 C107.3,168.7 107.3,184.3 136.4,184.3 C165.5,184.3 165.5,129.6 194.5,129.6 C223.6,129.6 223.6,145.2 252.7,145.2 C281.8,145.2 281.8,98.3 310.9,98.3 C340.0,98.3 340.0,113.9 369.1,113.9 C398.2,113.9 398.2,74.8 427.3,74.8 C456.4,74.8 456.4,90.4 485.5,90.4 C514.5,90.4 514.5,51.3 543.6,51.3 C572.7,51.3 572.7,67.0 601.8,67.0 C630.9,67.0 630.9,20.0 660.0,20.0" />
+
+      <!-- pulsing "live" end point -->
+      <circle class="flow-end-pulse" cx="660" cy="20" r="5" />
+      <circle class="flow-end" cx="660" cy="20" r="5" />
+    </svg>
+
+    <div class="chart-x-labels">
+      <span>Jan</span>
+      <span>Feb</span>
+      <span>Mar</span>
+      <span>Apr</span>
+      <span>May</span>
+      <span>Jun</span>
+      <span>Jul</span>
+      <span>Aug</span>
+      <span>Sep</span>
+      <span>Oct</span>
+      <span>Nov</span>
+      <span>Dec</span>
     </div>
-
   </div>
 
-      </section>
-
+</section>
 
       <section>
         <div class="month-selector">
@@ -677,83 +406,6 @@
         </ul>
       </nav>
       <div class="footer-container">
-        <!-- About -->
-        <div class="footer-section">
-          <h3>Waiter Calculator</h3>
-
-          <p>
-            A simple and reliable way to track your daily earnings, expenses and
-            monthly performance.
-          </p>
-        </div>
-
-        <!-- Quick Links -->
-        <div class="footer-section">
-          <h3>Quick Links</h3>
-
-          <ul>
-            <li>
-              <a href="../pages/waiter_board.html">Home</a>
-            </li>
-
-            <li>
-              <a href="../pages/monthly_report.html"> Monthly Report </a>
-            </li>
-
-            <li>
-              <a href="../pages/spending_report.html"> Spending Report </a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Contact -->
-        <div class="footer-section">
-          <h3>Contact</h3>
-
-          <ul>
-            <li>
-              <a href="mailto:support@waitercalculator.com">
-                📧 support@waitercalculator.com
-              </a>
-            </li>
-
-            <li>
-              <span>📍 South Africa</span>
-            </li>
-
-            <li>
-              <span>💰 Track. Save. Grow.</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Footer Actions -->
-        <div class="footer-section">
-          <h3>Useful</h3>
-
-          <ul>
-            <li>
-              <a href="#">Privacy</a>
-            </li>
-
-            <li>
-              <a href="#">Terms</a>
-            </li>
-
-            <li>
-              <a href="#">Help & Support</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Bottom Footer -->
-
-      <div class="footer-bottom">
-        <p>&copy; 2026 Waiter Calculator. All rights reserved.</p>
-
-        <p>Built with ❤️ using HTML, CSS & JavaScript</p>
-      </div>
     </footer>
     <script src="../Js_script/jquery-3.7.1.min.js"></script>
     <script src="../Js_script/update.js"></script>
