@@ -3,45 +3,128 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="stylesheet" href="../styling/style.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="../styling/login.css" />
+    <article
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+      >
+      
+
+    <title>Login | Waiter Calculator</title>
   </head>
+
   <body>
-    <header>
+    <!-- HEADER -->
+    <header class="login-header">
       <h1>Waiter Calculator</h1>
-
-      <nav aria-label="Main navigation">
-        <ul>
-          <li>
-            <a href="../pages/waiter_board.html">Home</a>
-          </li>
-
-          <li>
-            <a href="../pages/monthly_report.html">Monthly Report</a>
-          </li>
-
-          <li>
-            <a href="../pages/spending_report.html">Spending Report</a>
-          </li>
-        </ul>
-      </nav>
     </header>
-    <body>
+
+    <main class="login-page">
+      <!-- HERO -->
       <section class="hero">
+        <div class="hero-icon">👤</div>
+
+        <span class="section-eyebrow">WELCOME BACK</span>
+
         <h2>Login to experience</h2>
+
+        <p>Track your earnings, expenses and financial goals with ease.</p>
       </section>
-      <section class="Log-in">
-        <form>
-          <span>profile pic: </span>
-          <input type="text" placeholder="username" />
-          <input type="text" placeholder="password" />
 
-          <a href="">forgot password</a>
+      <!-- LOGIN CARD -->
+      <section class="login-card">
+        <form class="login-form">
+          <!-- PROFILE ICON -->
+          <div class="profile-placeholder">
+            <span>👤</span>
+          </div>
 
-          <input type="submit" />
+          <!-- USERNAME -->
+          <div class="input-group">
+            <label for="username"> Username </label>
+
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Enter your username"
+              autocomplete="username"
+              required
+            />
+          </div>
+
+          <!-- PASSWORD -->
+          <div class="input-group">
+            <div class="password-label">
+              <label for="password"> Password </label>
+
+              <a href="#"> Forgot password? </a>
+            </div>
+
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              required
+            />
+          </div>
+
+          <!-- LOGIN -->
+          <button type="submit" class="login-button">Login</button>
         </form>
+
+        <!-- DIVIDER -->
+        <div class="divider">
+          <span></span>
+          <p>or continue with</p>
+          <span></span>
+        </div>
+
+        <!-- SOCIAL LOGIN -->
+        <div class="social-login">
+          <!-- GOOGLE -->
+          <a
+            class="social-button google-login"
+            href="https://accounts.google.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="google-icon">G</span>
+
+            <span> Continue with Google </span>
+          </a>
+
+          <!-- APPLE -->
+          <a
+            class="social-button apple-login"
+            href="https://appleid.apple.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="apple-icon">●</span>
+
+            <span> Continue with Apple </span>
+          </a>
+        </div>
+
+        <!-- SIGN UP -->
+        <p class="signup-text">
+          Don't have an account?
+          <a href="../pages/signup.html"> Create one </a>
+        </p>
       </section>
-    </body>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="login-footer">
+      <p>© 2026 Waiter Calculator</p>
+
+      <span> Track. Save. Grow. 💙 </span>
+    </footer>
 
     <script src="../Js_script/jquery-3.7.1.min.js"></script>
     <script src="../Js_script/wiater_calc.js"></script>

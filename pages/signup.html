@@ -3,42 +3,200 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="stylesheet" href="../styling/style.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="../styling/signup.css" />
+
+    <title>Waiter Calculator - Sign Up</title>
   </head>
+
   <body>
-    <header>
+    <!-- Header -->
+    <header class="signup-header">
       <h1>Waiter Calculator</h1>
-
-      <select>
-        <option value="🏠 Home">
-          <a href="../pages/home.html">🏠 Home</a>
-        </option>
-        <option value="📈 Stats">
-          <a href="../pages/analytics.html">📈 Analytic</a>
-        </option>
-        <option value="💸 Expense"></option>
-        <option value="🧠 Insights"></option>
-        <option value="👤 PROFILE"></option>
-      </select>
     </header>
-    <body>
-      <section class="hero">
-        <h2>Login to experience</h2>
+
+    <!-- Main Signup Area -->
+    <main class="signup-page">
+      <!-- Hero -->
+      <section class="signup-hero">
+        <div class="signup-icon">💰</div>
+
+        <h2>Create your account ✨</h2>
+
+        <p>Start tracking your earnings, expenses and financial goals.</p>
       </section>
-      <section>
-        <form>
-          <span>profile pic: </span>
-          <input type="text" placeholder="username" />
-          <input type="text" placeholder="password" />
 
-          <a href="">forgot password</a>
+      <!-- Signup Card -->
+      <section class="signup-card">
+        <!-- Profile Picture -->
+        <div class="profile-upload">
+          <div class="profile-preview" id="profilePreview">👤</div>
 
-          <input type="submit" />
+          <label for="profilePicture" class="upload-button">
+            📷 Add photo
+          </label>
+
+          <input
+            type="file"
+            id="profilePicture"
+            name="profilePicture"
+            accept="image/*"
+            hidden
+          />
+
+          <small>Optional</small>
+        </div>
+
+        <!-- Signup Form -->
+        <form class="signup-form" id="signupForm">
+          <!-- Username -->
+          <div class="input-group">
+            <label for="username"> Username </label>
+
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Choose a username"
+              autocomplete="username"
+              required
+            />
+
+            <small class="input-hint"> This will be your display name. </small>
+          </div>
+
+          <!-- Email -->
+          <div class="input-group">
+            <label for="email"> Email address </label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            />
+          </div>
+
+          <!-- Phone -->
+          <div class="input-group">
+            <label for="phone"> Phone number </label>
+
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="+27 00 000 0000"
+              autocomplete="tel"
+            />
+          </div>
+
+          <!-- Password -->
+          <div class="input-group">
+            <label for="password"> Password </label>
+
+            <div class="password-wrapper">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Create a strong password"
+                autocomplete="new-password"
+                required
+              />
+
+              <button
+                type="button"
+                class="password-toggle"
+                id="togglePassword"
+                aria-label="Show password"
+              >
+                👁️
+              </button>
+            </div>
+
+            <!-- Password Strength -->
+            <div class="password-strength">
+              <div class="strength-bar">
+                <span id="strengthProgress"></span>
+              </div>
+
+              <span id="strengthText"> Password strength </span>
+            </div>
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="input-group">
+            <label for="confirmPassword"> Confirm password </label>
+
+            <div class="password-wrapper">
+              <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                placeholder="Confirm your password"
+                autocomplete="new-password"
+                required
+              />
+
+              <button
+                type="button"
+                class="password-toggle"
+                id="toggleConfirmPassword"
+                aria-label="Show password"
+              >
+                👁️
+              </button>
+            </div>
+
+            <small id="passwordMatch" class="input-hint">
+              Passwords must match.
+            </small>
+          </div>
+
+          <!-- Terms -->
+          <div class="terms-container">
+            <label class="terms-label">
+              <input type="checkbox" id="terms" name="terms" required />
+
+              <span>
+                I agree to the
+                <a href="#" class="terms-link"> Terms & Conditions </a>
+                and
+                <a href="#" class="terms-link"> Privacy Policy </a>.
+              </span>
+            </label>
+          </div>
+
+          <!-- Create Account -->
+          <button type="submit" class="signup-button">
+            Create Account
+            <span>→</span>
+          </button>
         </form>
-      </section>
-    </body>
 
+        <!-- Divider -->
+        <div class="divider">
+          <span>Already have an account?</span>
+        </div>
+
+        <!-- Login -->
+        <a href="../pages/login.html" class="login-link-button">
+          Login to your account
+        </a>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="signup-footer">
+      <p>© 2026 Waiter Calculator</p>
+
+      <span> Track. Save. Grow. 💙 </span>
+    </footer>
+
+    <!-- JavaScript -->
     <script src="../Js_script/jquery-3.7.1.min.js"></script>
     <script src="../Js_script/wiater_calc.js"></script>
   </body>

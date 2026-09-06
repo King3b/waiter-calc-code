@@ -2411,6 +2411,104 @@ tbody tr:last-child td {
 
   font-size: 12px;
 }
+/* =========================================================
+   INCOME STATEMENT
+   ========================================================= */
+
+.income-statement-section {
+  text-align: left;
+}
+
+.income-statement {
+  margin-top: 6px;
+}
+
+.is-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+
+  padding: 9px 0;
+}
+
+.is-label {
+  color: var(--dark);
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.is-value {
+  color: var(--dark);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* Indented detail lines under a heading */
+
+.is-indent .is-label {
+  padding-left: 16px;
+
+  color: var(--gray);
+  font-weight: 400;
+}
+
+/* Section headings ("Operating Expenses" etc.) */
+
+.is-row.is-heading {
+  margin-top: 10px;
+}
+
+.is-row.is-heading .is-label {
+  color: var(--dark);
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Accounting rule: sits under the last detail line before a subtotal */
+
+.is-row.is-ruled {
+  border-bottom: 1.5px solid var(--dark);
+
+  padding-bottom: 9px;
+}
+
+/* Subtotal rows (Operating Income, Income Before Income Tax) */
+
+.is-row.is-subtotal .is-label,
+.is-row.is-subtotal .is-value {
+  font-weight: 700;
+}
+
+/* Final total: bold + double rule, like a printed statement */
+
+.is-row.is-total {
+  margin-top: 4px;
+  padding: 10px 0;
+
+  border-top: 1.5px solid var(--dark);
+  border-bottom: 3px double var(--dark);
+}
+
+.is-row.is-total .is-label,
+.is-row.is-total .is-value {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.is-value.is-positive {
+  color: var(--dark-green);
+}
+
+.is-value.is-negative {
+  color: var(--red);
+}
 
 /* =========================================================
    FINANCIAL STATS
@@ -3409,6 +3507,41 @@ tbody tr:last-child td {
 
     margin-bottom: 17px;
   }
+  /*login page*/
+  .login-header {
+    padding: 16px 5%;
+  }
+
+  .login-header h1 {
+    font-size: 21px;
+  }
+
+  .login-page {
+    width: 92%;
+
+    margin: 35px auto 55px;
+  }
+
+  .login-hero h2 {
+    font-size: 25px;
+  }
+
+  .login-card {
+    padding: 25px 20px;
+
+    border-radius: 24px;
+  }
+
+  .profile-placeholder {
+    width: 68px;
+    height: 68px;
+
+    margin-bottom: 23px;
+  }
+
+  .login-options {
+    align-items: flex-start;
+  }
 
   /* Stats */
 
@@ -3503,7 +3636,16 @@ tbody tr:last-child td {
 
     margin-top: 3px;
   }
+  /*expensee report*/
+  .is-label,
+  .is-value {
+    font-size: 13px;
+  }
 
+  .is-row.is-total .is-label,
+  .is-row.is-total .is-value {
+    font-size: 15px;
+  }
   /* Month */
 
   .month-selector {
@@ -3686,7 +3828,21 @@ tbody tr:last-child td {
   table {
     min-width: 500px;
   }
+  .login-page {
+    width: 94%;
+  }
 
+  .login-card {
+    padding: 22px 16px;
+  }
+
+  .login-hero h2 {
+    font-size: 23px;
+  }
+
+  .social-button {
+    height: 48px;
+  }
   .dropdown-menu {
     right: 10px;
 

@@ -3,34 +3,133 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
     <title>Spending Report</title>
 
     <link rel="stylesheet" href="../styling/style.css" />
   </head>
 
   <body>
-    <header>
-      <h1>Waiter Calculator</h1>
+    <header class="app-header">
+      <div class="header-top">
+        <div>
+          <h1>Waiter Calculator</h1>
+        </div>
+      
 
-      <nav aria-label="Main navigation">
-        <ul>
-          <li>
-            <a href="../pages/waiter_board.html">Home</a>
-          </li>
-
-          <li>
-            <a href="../pages/monthly_report.html">Monthly Report</a>
-          </li>
-
-          <li>
-            <a href="../pages/spending_report.html">Spending Report</a>
-          </li>
-        </ul>
-      </nav>
+        <div class="header-actions">
+            <div class="header-opt">
+          <button class="menu-btn" id="menuBtn">
+            <span class="material-symbols-outlined">menu </span>
+          </button>
+          <div class="dropdown-menu" id="dropdownMenu">
+            <a href="../pages/home.html">🏠 Home</a>
+            <a href="../pages/entry.html">💲 Add Earnings</a>
+            <a href="../pages/analytics.html">📈 Analytics</a>
+            <a href="../pages/expense.html">💸 Expense</a>
+            <a href="../pages/goals.html">🎯 Goals</a>
+            <a href="../pages/profile.html">👤 Profile</a>
+          </div>
+        </div>
+          <button class="icon-button" aria-label="Notifications">🔔</button>
+      
+          <button class="profile-button" aria-label="Profile"><a href="../pages/profile.html">👤</a></button>
+        </div>
+      </div>
     </header>
 
     <main>
+
+      <!-- =========================================================
+     INCOME STATEMENT
+     ========================================================= -->
+
+<section class="section income-statement-section">
+
+  <div class="chart-header">
+    <div>
+      <span class="chart-eyebrow">INCOME STATEMENT</span>
+      <h2>Profit &amp; Loss</h2>
+      <p data-field="period">For the year ended 31 August 2026</p>
+    </div>
+  </div>
+
+  <div class="income-statement" id="incomeStatement">
+
+    <div class="is-row">
+      <span class="is-label">Revenue</span>
+      <span class="is-value" data-field="revenue">R 500,000</span>
+    </div>
+
+    <div class="is-row is-ruled">
+      <span class="is-label">Cost of Goods Sold</span>
+      <span class="is-value" data-field="cogs">R 300,000</span>
+    </div>
+
+    <div class="is-row">
+      <span class="is-label">Gross Profit</span>
+      <span class="is-value" data-field="grossProfit">R 200,000</span>
+    </div>
+
+    <div class="is-row is-heading">
+      <span class="is-label">Operating Expenses</span>
+    </div>
+
+    <div class="is-row is-indent">
+      <span class="is-label">Wages Expense</span>
+      <span class="is-value" data-field="wages">R 80,000</span>
+    </div>
+
+    <div class="is-row is-indent">
+      <span class="is-label">Rent Expense</span>
+      <span class="is-value" data-field="rent">R 25,000</span>
+    </div>
+
+    <div class="is-row is-indent is-ruled">
+      <span class="is-label">Utilities Expense</span>
+      <span class="is-value" data-field="utilities">R 10,000</span>
+    </div>
+
+    <div class="is-row">
+      <span class="is-label">Total Operating Expenses</span>
+      <span class="is-value" data-field="totalOpEx">R 115,000</span>
+    </div>
+
+    <div class="is-row is-subtotal">
+      <span class="is-label">Operating Income</span>
+      <span class="is-value" data-field="operatingIncome">R 85,000</span>
+    </div>
+
+    <div class="is-row is-heading">
+      <span class="is-label">Other Income and Expenses</span>
+    </div>
+
+    <div class="is-row is-indent is-ruled">
+      <span class="is-label">Interest Expense</span>
+      <span class="is-value" data-field="interestExpense">R 5,000</span>
+    </div>
+
+    <div class="is-row is-subtotal">
+      <span class="is-label">Income Before Income Tax</span>
+      <span class="is-value" data-field="incomeBeforeTax">R 80,000</span>
+    </div>
+
+    <div class="is-row is-ruled">
+      <span class="is-label">Income Tax Expense</span>
+      <span class="is-value" data-field="incomeTax">R 20,000</span>
+    </div>
+
+    <div class="is-row is-total">
+      <span class="is-label">Net Income</span>
+      <span class="is-value is-positive" data-field="netIncome">R 60,000</span>
+    </div>
+
+  </div>
+
+      </section>
       <section>
         <h2>Spending Report</h2>
 
@@ -38,17 +137,18 @@
           <table>
             <thead>
               <tr>
-                <th>Date</th>
-                <th>Transaction</th>
+                <th>Detail</th>
                 <th>Amount</th>
               </tr>
             </thead>
 
-            <tbody id="spending-report-body"></tbody>
+            <tbody id="spending-report-body">
+  
+            </tbody>
 
             <tfoot>
               <tr>
-                <td colspan="2">Total</td>
+                <td >Total</td>
                 <td id="totalEarnings">R0.00</td>
               </tr>
             </tfoot>
@@ -72,6 +172,7 @@
     </footer>
 
     <script src="../Js_script/jquery-3.7.1.min.js"></script>
+    <script src="../Js_script/update.js"></script>
     <script src="../Js_script/wiater_calc.js"></script>
   </body>
 </html>
